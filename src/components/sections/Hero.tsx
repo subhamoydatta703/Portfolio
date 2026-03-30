@@ -71,7 +71,7 @@ export default function Hero() {
               {firstName.map((char, i) => (
                 <motion.span
                   key={i}
-                  className="inline-block hover:text-[#00f0ff99] transition-colors duration-200"
+                  className="inline-block hover:text-[#00f0ff] transition-colors duration-200"
                   whileHover={{ y: -10, transition: { type: "spring" as const, stiffness: 400, damping: 10 } }}
                 >
                   {char}
