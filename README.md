@@ -1,34 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Subhamoy Datta — Portfolio
 
-## Getting Started
 
-First, run the development server:
+> **Live Preview:** [subhamoydatta.com](https://subhamoydatta.com) *(Update with actual domain)*
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+A cinematic, high-performance portfolio website built with modern web technologies. Designed to provide a flawless "weightless DOM" scrollytelling experience, capturing the essence of deep-space aesthetics without utilizing costly WebGL/3D libraries. It combines cutting-edge React paradigms, powerful generic CSS utility systems, and Framer Motion's robust API.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **Cinematic Scrollytelling:** Leverages Lenis for butter-smooth scroll hijacking and Framer Motion for scroll-linked animations. 
+* **High-Performance Architecture:** Purely DOM-based animations, achieving blazing fast metrics with zero 3D dependencies constraint. 
+* **Dynamic Aesthetics:** Deep-space style visual language complete with a static grain overlay, neon accents, and responsive hover-glow sections. 
+* **Fully Responsive:** Painstakingly optimized to deliver 60fps on both ultra-wide monitors and memory-constrained mobile devices. 
+* **Type-Safe:** Written and strictly configured in 100% TypeScript. 
 
-## Learn More
+## Technology Stack 
 
-To learn more about Next.js, take a look at the following resources:
+| Category         | Technology                 |
+| ---------------- | -------------------------- |
+| **Framework**    | [Next.js 15+](https://nextjs.org/) (App Directory) |
+| **Language**     | [TypeScript](https://www.typescriptlang.org/)     |
+| **Styling**      | [Tailwind CSS v4](https://tailwindcss.com/)       |
+| **Animations**   | [Framer Motion](https://www.framer.com/motion/)   |
+| **Scroll Engine**| [Lenis](https://lenis.studiofreight.com/)         |
+| **Icons**        | [Lucide React](https://lucide.dev/)               |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Getting Started 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Prerequisites
+Make sure you have Node.js (v18+) and npm installed.
 
-## Deploy on Vercel
+### Installation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/subhamoydatta703/portfolio.git
+   cd portfolio
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+   *Note: If you run into dependency resolution issues, you can strictly install using `npm install --legacy-peer-deps`.*
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000) to view the site on your local machine.
+
+## Built Commands
+* `npm run dev`: Launch the Next.js development server.
+* `npm run build`: Build a minified production bundle.
+* `npm run start`: Start the production server based on the built files.
+* `npm run typecheck`: Run TypeScript compiler to check for static typing errors.
+* `npm run lint`: Run Next ESLint.
+
+## Designing Philosophy & Layout Sections 
+
+* **Hero Section:** Serves as the high-impact landing with massive typographic elements highlighting DSA, Codeforces execution, and Full-Stack capability.
+* **Project Works:** Handcrafted cards with generic `hover-zoom` implementations. Links dynamically navigate to code previews.
+* **About Scope:** Translucent glassmorphism tech stack highlighting technical acumen across front-end rendering engines and backend API design.
+* **Socials/Contact Action:** Seamless formless CTA directing organic network reach to Github, LinkedIn, and Email copy-clip implementations.
+
+## License & Copyright
+
+All structural and design elements created expressly for this repository unless otherwise noted.  
+© 2026 Subhamoy Datta. All rights reserved. 
