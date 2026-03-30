@@ -1,7 +1,7 @@
 # Subhamoy Datta — Portfolio
 
 
-> **Live Preview:** [subhamoydatta.com](https://subhamoydatta.com) *(Update with actual domain)*
+> **Live Preview:** [subhamoydatta.com](https://subhamoydattaportfolio.vercel.app/)
 
 A cinematic, high-performance portfolio website built with modern web technologies. Designed to provide a flawless "weightless DOM" scrollytelling experience, capturing the essence of deep-space aesthetics without utilizing costly WebGL/3D libraries. It combines cutting-edge React paradigms, powerful generic CSS utility systems, and Framer Motion's robust API.
 
