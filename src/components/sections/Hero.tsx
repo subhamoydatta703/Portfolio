@@ -6,11 +6,11 @@ import { GithubIcon, LinkedinIcon, XIcon } from "../ui/SocialIcons";
 import MagneticButton from "../ui/MagneticButton";
 
 const subtitles = [
-  "Full Stack Developer",
-  "AI & ML Explorer",
-  "DSA Problem Solver",
-  "Codeforces Competitor",
-  "Creative Coder",
+  "Backend Developer",
+  "Problem Solver",
+  "AI & Backend Systems",
+  "Building Real Projects",
+  "Computer Science Student",
 ];
 
 export default function Hero() {
@@ -109,14 +109,21 @@ export default function Hero() {
           variants={item}
           className="mt-8 text-lg md:text-xl text-white/40 max-w-2xl font-sans leading-relaxed"
         >
-          I&apos;m Subhamoy Datta — a Full Stack Web Developer and B.Tech CSE
-          student specializing in AI & ML. I build production-grade MERN
-          applications and explore the frontiers of Generative AI.
+          I&apos;m Subhamoy Datta — a Backend Developer building modern applications with AI integration, cloud technologies, and real-world backend systems.
         </motion.p>
 
         {/* DSA & Competitive Programming highlights */}
         <motion.div variants={item} className="mt-8 flex flex-wrap gap-3">
           <a
+            href="https://drive.google.com/file/d/1RAaFNiFpo32aldwGvsiVeeGz0wdU5-2_/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor-hover
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/[0.08] bg-white/[0.02] hover:border-[#00f0ff]/40 hover:bg-[#00f0ff]/5 transition-all duration-300 group"
+          >
+            
+            <span className="text-sm font-sans text-white/50 group-hover:text-white/80 transition-colors">Resume</span></a>
+          {/* <a
             href="https://codeforces.com/profile/sub_algo"
             target="_blank"
             rel="noopener noreferrer"
@@ -125,7 +132,7 @@ export default function Hero() {
           >
             
             <span className="text-sm font-sans text-white/50 group-hover:text-white/80 transition-colors">Codeforces</span>
-          </a>
+          </a> */}
           <a
             href="https://leetcode.com/u/26W5VCTCTA"
             target="_blank"
@@ -136,6 +143,7 @@ export default function Hero() {
             
             <span className="text-sm font-sans text-white/50 group-hover:text-white/80 transition-colors">LeetCode</span>
           </a>
+          
         </motion.div>
 
         {/* Social Links */}

@@ -7,53 +7,38 @@ import { ArrowUpRight } from "lucide-react";
 const projects = [
   {
     id: "01",
-    title: "Dev Query",
-    type: "Full Stack / Community",
-    desc: "A query-based platform where developers can post their questions and get answers from the community. Built for real-time collaborative problem-solving.",
-    link: "https://dev-query-app.vercel.app",
-    tech: ["React", "Node.js", "MongoDB", "Express"],
+    title: "Resumark",
+    type: "AI-Powered Resume Analyzer",
+    desc: "Upload a resume and receive ATS scoring, AI-powered feedback, and improvement suggestions. Built with PostgreSQL, Redis caching, BullMQ background workers, AWS S3 storage, and Gemini AI integration.",
+    link: "https://resumark-webapp.vercel.app",
+    tech: [
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "BullMQ",
+      "AWS S3",
+      "Gemini API",
+    ],
     gradient: "from-[#00f0ff]/15 via-[#00f0ff]/5 to-transparent",
     accentColor: "#00f0ff",
   },
+
   {
     id: "02",
-    title: "Flow State",
-    type: "AI / Productivity",
-    desc: "An AI-powered gamified productivity app that tracks, analyzes weekly patterns, and reviews your workflow using Generative AI to unlock your best performance.",
-    link: "https://flow-state-app.vercel.app",
-    tech: ["Next.js", "Gemini AI", "Tailwind", "Prisma"],
+    title: "ShelfLife",
+    type: "Inventory Management System",
+    desc: "A web application for managing inventory and tracking product shelf life. Built with backend APIs, database integration, and inventory workflows to help users manage products efficiently.",
+    link: "https://shelf-life-webapp.vercel.app",
+    tech: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JavaScript",
+    ],
     gradient: "from-[#a855f7]/15 via-[#a855f7]/5 to-transparent",
     accentColor: "#a855f7",
-  },
-  {
-    id: "03",
-    title: "Mars Quest",
-    type: "Frontend / Storytelling",
-    desc: "An immersive frontend storytelling website that takes you on a cinematic journey from Earth to Mars with scroll-driven animations and rich visuals.",
-    link: "https://marsquest.vercel.app",
-    tech: ["React", "GSAP", "Three.js", "Lenis"],
-    gradient: "from-[#f97316]/15 via-[#f97316]/5 to-transparent",
-    accentColor: "#f97316",
-  },
-  {
-    id: "04",
-    title: "EcoScan AI",
-    type: "AI / Developer Tools",
-    desc: "Scan and analyze local folders or GitHub repos to get green coding patterns, sustainability reports, optimized code suggestions and AI-powered explanations.",
-    link: "https://ecoscanaiapp.vercel.app",
-    tech: ["Next.js", "Gemini AI", "GitHub API", "Tailwind"],
-    gradient: "from-[#22c55e]/15 via-[#22c55e]/5 to-transparent",
-    accentColor: "#22c55e",
-  },
-  {
-    id: "05",
-    title: "Learn Sphere",
-    type: "AI / EdTech",
-    desc: "A cutting-edge AI-powered learning platform that generates personalized courses, provides intelligent tutoring, and gamifies learning with XP and progress tracking.",
-    link: "https://learn-sphere-frontend-sage.vercel.app",
-    tech: ["React", "Gemini AI", "Node.js", "MongoDB"],
-    gradient: "from-[#ec4899]/15 via-[#ec4899]/5 to-transparent",
-    accentColor: "#ec4899",
   },
 ];
 
@@ -84,7 +69,7 @@ export default function ProjectGallery() {
             <span className="text-[#00f0ff]">Works</span>
           </h2>
         </div>
-        
+
         <p className="text-white/30 max-w-xs mt-8 md:mt-0 font-sans text-base leading-relaxed">
           A curated selection of projects spanning full-stack development, AI
           integration, and creative frontend storytelling.

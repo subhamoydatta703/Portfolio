@@ -3,9 +3,25 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  "React", "Next.js", "Node.js", "Express", "MongoDB", "TypeScript",
-  "JavaScript", "Java", "Python", "Tailwind CSS", "Git", "MySQL",
-  "GenAI", "Gemini API", "REST APIs", "Postman",
+  "TypeScript",
+  "JavaScript",
+  "Node.js",
+  "Express.js",
+  "PostgreSQL",
+  "MongoDB",
+  "Prisma",
+  "Redis",
+  "BullMQ",
+  "JWT",
+  "OAuth 2.0",
+  "AWS S3",
+  "AWS EC2",
+  "Docker",
+  "REST APIs",
+  "Git",
+  "Java",
+  "Python",
+  "Gemini API",
 ];
 
 export default function AboutSection() {
@@ -54,15 +70,19 @@ export default function AboutSection() {
           <span className="text-cyan-accent">AM I</span>
         </motion.h2>
 
-        {/* Simple Bio */}
+        {/* Bio */}
         <motion.p
           variants={itemVariants}
           className="font-sans text-lg md:text-xl text-white/50 leading-relaxed mb-12 max-w-3xl"
         >
-          Hey! I&apos;m <span className="text-white font-semibold">Subhamoy Datta</span>, 
-          a Full Stack Web Developer currently pursuing B.Tech in CSE with
-          specialization in AI & ML. I love building things for the web 
-          and solving challenging problems through code.
+          Hey, I&apos;m{" "}
+          <span className="text-white font-semibold">Subhamoy Datta</span> — a
+          Computer Science student focused on backend development. I learn by
+          building: writing the code, breaking it, figuring out why, and
+          shipping it. Most of my work lives in APIs, databases, queues, and
+          the layer where backend systems meet AI integrations. I&apos;m not
+          chasing titles — I&apos;m building things that work and understanding
+          them deeply along the way.
         </motion.p>
 
         {/* ─── What I Do Grid ─── */}
@@ -70,33 +90,41 @@ export default function AboutSection() {
           variants={itemVariants}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 max-w-5xl"
         >
-          {/* Card 1: Full Stack */}
+          {/* Card 1: Backend Development */}
           <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 hover:border-[#00f0ff]/20 hover:bg-[#00f0ff]/[0.02] transition-all duration-500">
-            
-            <h3 className="text-lg font-heading font-bold mb-3 text-white/80">Full Stack Dev</h3>
+            <h3 className="text-lg font-heading font-bold mb-3 text-white/80">
+              Backend Development
+            </h3>
             <p className="text-sm text-white/40 font-sans leading-relaxed">
-              Building web apps with the MERN stack — React, Node.js, Express, MongoDB. 
-              From frontend animations to backend APIs.
+              Building server-side systems with Node.js, Express, PostgreSQL,
+              Redis, and BullMQ. I care about how data flows, how queues
+              behave under load, and why things break in production.
             </p>
           </div>
 
-          {/* Card 2: DSA & Competitive */}
+          {/* Card 2: DSA & Problem Solving */}
           <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 hover:border-[#a855f7]/20 hover:bg-[#a855f7]/[0.02] transition-all duration-500">
-            
-            <h3 className="text-lg font-heading font-bold mb-3 text-white/80">DSA & Codeforces</h3>
+            <h3 className="text-lg font-heading font-bold mb-3 text-white/80">
+              DSA & Problem Solving
+            </h3>
             <p className="text-sm text-white/40 font-sans leading-relaxed">
-              Actively solving data structures & algorithm problems. Competing 
-              on Codeforces to sharpen my problem-solving skills.
+              Consistently working through data structures and algorithms —
+              arrays, trees, graphs, dynamic programming. Focused on building
+              the kind of problem-solving depth that matters for real
+              engineering work.
             </p>
           </div>
 
-          {/* Card 3: AI & ML */}
+          {/* Card 3: AI Integration */}
           <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 hover:border-[#22c55e]/20 hover:bg-[#22c55e]/[0.02] transition-all duration-500">
-            
-            <h3 className="text-lg font-heading font-bold mb-3 text-white/80">AI & ML</h3>
+            <h3 className="text-lg font-heading font-bold mb-3 text-white/80">
+              AI Integration
+            </h3>
             <p className="text-sm text-white/40 font-sans leading-relaxed">
-              Exploring Generative AI and machine learning. Integrating 
-              Google Gemini into real-world applications.
+              Integrating AI into backend systems — not researching models, but
+              wiring them into real applications. Built Resumark using the
+              Gemini API with job queues, caching, and structured output
+              pipelines.
             </p>
           </div>
         </motion.div>
