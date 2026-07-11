@@ -7,13 +7,37 @@ import { ArrowUpRight } from "lucide-react";
 const projects = [
   {
     id: "01",
+    title: "DocSense",
+    type: "AI-Powered Document Intelligence",
+    desc: "RAG-powered platform that parses, embeds, and queries unstructured documents through natural conversation. Combines pgvector similarity search with a background job pipeline (Redis/BullMQ) for async embedding, plus Redis-backed rate limiting and result caching. Returns answers grounded in traceable source chunks rather than hallucinated text.",
+    link: "https://docsense-app.vercel.app",
+    tech: [
+      "Bun",
+      "TypeScript",
+      "Express.js",
+      "PostgreSQL",
+      "pgvector",
+      "LangChain",
+      "Redis",
+      "BullMQ",
+      "AWS S3",
+      "Clerk",
+      "Gemini API",
+    ],
+    gradient: "from-[#22c55e]/15 via-[#22c55e]/5 to-transparent",
+    accentColor: "#22c55e",
+  },
+
+  {
+    id: "02",
     title: "Resumark",
     type: "AI-Powered Resume Analyzer",
-    desc: "Upload a resume and receive ATS scoring, AI-powered feedback, and improvement suggestions. Built with PostgreSQL, Redis caching, BullMQ background workers, AWS S3 storage, and Gemini AI integration.",
+    desc: "Upload a resume and receive Gemini-generated feedback and improvement suggestions, backed by an async processing pipeline (BullMQ/Redis) for scalable analysis. Uses Redis-backed rate limiting and result caching, with resumes stored securely in AWS S3.",
     link: "https://resumark-webapp.vercel.app",
     tech: [
+      "Bun",
       "TypeScript",
-      "Node.js",
+      "Express.js",
       "PostgreSQL",
       "Prisma",
       "Redis",
@@ -26,15 +50,16 @@ const projects = [
   },
 
   {
-    id: "02",
+    id: "03",
     title: "ShelfLife",
-    type: "Inventory Management System",
-    desc: "A web application for managing inventory and tracking product shelf life. Built with backend APIs, database integration, and inventory workflows to help users manage products efficiently.",
+    type: "Household Inventory Tracker",
+    desc: "Full-stack inventory management app for tracking household products and shelf life to reduce waste. Features JWT-authenticated user accounts and RESTful APIs for adding, updating, and monitoring inventory in real time.",
     link: "https://shelf-life-webapp.vercel.app",
     tech: [
       "Node.js",
       "Express.js",
       "MongoDB",
+      "JWT",
       "JavaScript",
     ],
     gradient: "from-[#a855f7]/15 via-[#a855f7]/5 to-transparent",
@@ -123,7 +148,7 @@ function ProjectCard({
 
       <div className="relative z-10 p-8 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
         {/* Left: Project Info */}
-        <div className="flex-1 max-w-3xl">
+        <div className="flex-1 max-w-5xl">
           <div className="flex items-center gap-4 mb-5">
             <span
               className="text-5xl md:text-7xl font-heading font-black leading-none opacity-[0.06]"
@@ -143,7 +168,7 @@ function ProjectCard({
             {project.title}
           </h3>
 
-          <p className="text-white/35 max-w-xl text-base lg:text-lg group-hover:text-white/60 transition-colors duration-500 leading-relaxed">
+          <p className="text-white/35 max-w-4xl text-base lg:text-lg group-hover:text-white/60 transition-colors duration-500 leading-relaxed">
             {project.desc}
           </p>
 

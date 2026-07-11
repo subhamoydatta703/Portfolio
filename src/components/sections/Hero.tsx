@@ -109,7 +109,7 @@ export default function Hero() {
           variants={item}
           className="mt-8 text-lg md:text-xl text-white/40 max-w-2xl font-sans leading-relaxed"
         >
-          I&apos;m Subhamoy Datta — a Backend Developer building modern applications with AI integration, cloud technologies, and real-world backend systems.
+         I&apos;m Subhamoy Datta — a Backend Developer specializing in AI-powered systems: RAG pipelines, LLM integration, and production-grade infrastructure built with TypeScript and modern cloud tooling.
         </motion.p>
 
         {/* DSA & Competitive Programming highlights */}

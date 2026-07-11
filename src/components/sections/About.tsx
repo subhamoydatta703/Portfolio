@@ -6,22 +6,27 @@ const skills = [
   "TypeScript",
   "JavaScript",
   "Node.js",
+  "Bun",
   "Express.js",
   "PostgreSQL",
+  "pgvector",
   "MongoDB",
   "Prisma",
   "Redis",
   "BullMQ",
+  "RAG",
+  "LangChain",
+  "Vector Search",
+  "Clerk",
   "JWT",
   "OAuth 2.0",
   "AWS S3",
-  "AWS EC2",
   "Docker",
   "REST APIs",
+  "Gemini API",
   "Git",
   "Java",
-  "Python",
-  "Gemini API",
+  "Python (ML/Data)",
 ];
 
 export default function AboutSection() {
@@ -77,10 +82,10 @@ export default function AboutSection() {
         >
           Hey, I&apos;m{" "}
           <span className="text-white font-semibold">Subhamoy Datta</span> — a
-          Computer Science student focused on backend development. I learn by
+          Computer Science student focused on backend and AI-integrated systems. I learn by
           building: writing the code, breaking it, figuring out why, and
           shipping it. Most of my work lives in APIs, databases, queues, and
-          the layer where backend systems meet AI integrations. I&apos;m not
+          the layer where backend systems meet AI. I&apos;m not
           chasing titles — I&apos;m building things that work and understanding
           them deeply along the way.
         </motion.p>
