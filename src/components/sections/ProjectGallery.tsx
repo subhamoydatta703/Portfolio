@@ -3,26 +3,30 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { GithubIcon } from "../ui/SocialIcons";
 
 const projects = [
   {
     id: "01",
     title: "DocSense",
-    type: "AI-Powered Document Intelligence",
-    desc: "RAG-powered platform that parses, embeds, and queries unstructured documents through natural conversation. Combines pgvector similarity search with a background job pipeline (Redis/BullMQ) for async embedding, plus Redis-backed rate limiting and result caching. Returns answers grounded in traceable source chunks rather than hallucinated text.",
-    link: "https://docsense-app.vercel.app",
+    type: "RAG Document Intelligence",
+    desc: "RAG-based secure document intelligence platform for PDF, URL, YouTube transcript, and raw text ingestion. Combines pgvector similarity search with an async Redis/BullMQ embedding pipeline for grounding answers, input/output guardrails, and network-level request verification, plus Redis-backed rate limiting and result caching, AWS S3 storage, and Clerk auth.",
+    links: {
+      live: "https://docsense-app.vercel.app",
+      repo: "https://github.com/subhamoydatta703/DocSense",
+    },
     tech: [
-      "Bun",
+      "React",
+      "Vite",
       "TypeScript",
       "Express.js",
+      "LangChain",
       "PostgreSQL",
       "pgvector",
-      "LangChain",
       "Redis",
       "BullMQ",
-      "AWS S3",
-      "Clerk",
       "Gemini API",
+      "AWS S3",
     ],
     gradient: "from-[#22c55e]/15 via-[#22c55e]/5 to-transparent",
     accentColor: "#22c55e",
@@ -30,10 +34,35 @@ const projects = [
 
   {
     id: "02",
+    title: "somoy",
+    type: "TypeScript AI Agent SDK · npm",
+    desc: "A transparent AI agent SDK exposing an inspectable think\u2192act\u2192observe loop, provider-agnostic behind a single ModelProvider interface (Gemini, OpenAI, offline MockProvider). Uses Zod-typed tool I/O and structured outputs, typed RunResult failure states instead of exceptions, built-in loop detection, agent handoffs with transcript transfer and chain tracking, and input/output/tool guardrails for safe execution. Published on npm as @subhamoy/somoy v0.1.7 (MIT).",
+    links: {
+      live: "https://npmjs.com/package/@subhamoy/somoy",
+      repo: "https://github.com/subhamoydatta703/Agent-SDK",
+    },
+    tech: [
+      "TypeScript",
+      "Bun",
+      "Gemini API",
+      "OpenAI",
+      "Zod",
+      "Agent Loops",
+      "Handoffs",
+    ],
+    gradient: "from-[#a855f7]/15 via-[#a855f7]/5 to-transparent",
+    accentColor: "#a855f7",
+  },
+
+  {
+    id: "03",
     title: "Resumark",
-    type: "AI-Powered Resume Analyzer",
-    desc: "Upload a resume and receive Gemini-generated feedback and improvement suggestions, backed by an async processing pipeline (BullMQ/Redis) for scalable analysis. Uses Redis-backed rate limiting and result caching, with resumes stored securely in AWS S3.",
-    link: "https://resumark-webapp.vercel.app",
+    type: "AI Resume Analysis",
+    desc: "Upload a resume and receive Gemini-generated feedback: summary, skills, ATS score, formatting feedback, and suggested roles. Backed by an async BullMQ/Redis pipeline, with Redis-backed rate limiting and caching, and resumes stored in AWS S3. Clerk auth secures the flow.",
+    links: {
+      live: "https://resumark-webapp.vercel.app",
+      repo: "https://github.com/subhamoydatta703/Resumark",
+    },
     tech: [
       "Bun",
       "TypeScript",
@@ -50,20 +79,17 @@ const projects = [
   },
 
   {
-    id: "03",
+    id: "04",
     title: "ShelfLife",
     type: "Household Inventory Tracker",
-    desc: "Full-stack inventory management app for tracking household products and shelf life to reduce waste. Features JWT-authenticated user accounts and RESTful APIs for adding, updating, and monitoring inventory in real time.",
-    link: "https://shelf-life-webapp.vercel.app",
-    tech: [
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "JWT",
-      "JavaScript",
-    ],
-    gradient: "from-[#a855f7]/15 via-[#a855f7]/5 to-transparent",
-    accentColor: "#a855f7",
+    desc: "Household inventory tracker for reducing waste. Ships JWT-authenticated accounts and a RESTful API for adding, updating, and monitoring inventory in real time.",
+    links: {
+      live: "https://shelf-life-webapp.vercel.app",
+      repo: "https://github.com/subhamoydatta703/Shelf-Life",
+    },
+    tech: ["Node.js", "Express.js", "MongoDB", "JWT", "JavaScript"],
+    gradient: "from-[#f97316]/15 via-[#f97316]/5 to-transparent",
+    accentColor: "#f97316",
   },
 ];
 
@@ -96,8 +122,8 @@ export default function ProjectGallery() {
         </div>
 
         <p className="text-white/30 max-w-xs mt-8 md:mt-0 font-sans text-base leading-relaxed">
-          A curated selection of projects spanning full-stack development, AI
-          integration, and creative frontend storytelling.
+          A curated selection of projects spanning RAG pipelines, AI agent
+          orchestration, and production-grade LLM backends.
         </p>
       </div>
 
@@ -111,7 +137,7 @@ export default function ProjectGallery() {
       />
 
       {/* Project Cards */}
-      <div className="grid grid-cols-1 gap-8 w-full z-10">
+      <div className="grid grid-cols-1 gap-6 w-full z-10">
         {projects.map((project, i) => (
           <ProjectCard key={project.id} project={project} index={i} />
         ))}
@@ -130,74 +156,86 @@ function ProjectCard({
   const fromLeft = index % 2 === 0;
 
   return (
-    <motion.a
-      href={project.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      data-cursor-hover
+    <motion.div
       initial={{ opacity: 0, x: fromLeft ? -80 : 80 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: false, amount: 0.15 }}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative w-full rounded-2xl overflow-hidden border border-white/[0.04] bg-[#0a0a0a] hover:bg-[#0e0e0e] transition-colors duration-500"
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="group relative w-full min-h-[16rem] rounded-2xl overflow-hidden border border-white/[0.04] bg-[#0a0a0a] hover:bg-[#0e0e0e] transition-colors duration-300"
     >
       {/* Hover gradient */}
       <div
         className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`}
       />
 
-      <div className="relative z-10 p-8 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-        {/* Left: Project Info */}
-        <div className="flex-1 max-w-5xl">
-          <div className="flex items-center gap-4 mb-5">
-            <span
-              className="text-5xl md:text-7xl font-heading font-black leading-none opacity-[0.06]"
-              style={{ color: project.accentColor }}
-            >
-              {project.id}
-            </span>
-            <p
-              className="font-sans font-semibold tracking-widest text-xs uppercase"
-              style={{ color: project.accentColor }}
-            >
-              {project.type}
-            </p>
-          </div>
-
-          <h3 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-white/80 group-hover:text-white transition-colors duration-300">
-            {project.title}
-          </h3>
-
-          <p className="text-white/35 max-w-4xl text-base lg:text-lg group-hover:text-white/60 transition-colors duration-500 leading-relaxed">
-            {project.desc}
+      <div className="relative z-10 p-6 md:p-10 flex flex-col justify-start gap-5">
+        {/* Header: id + type */}
+        <div className="flex items-center gap-4">
+          <span
+            className="text-5xl md:text-6xl font-heading font-black leading-none opacity-[0.08]"
+            style={{ color: project.accentColor }}
+          >
+            {project.id}
+          </span>
+          <p
+            className="font-sans font-semibold tracking-widest text-xs uppercase"
+            style={{ color: project.accentColor }}
+          >
+            {project.type}
           </p>
-
-          {/* Tech stack pills */}
-          <div className="flex flex-wrap gap-2 mt-6">
-            {project.tech.map((t) => (
-              <span
-                key={t}
-                className="text-[11px] font-mono tracking-wider uppercase px-3 py-1 rounded-full border border-white/[0.08] bg-white/[0.02] text-white/40 group-hover:text-white/60 group-hover:border-white/[0.12] transition-all duration-300"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
         </div>
 
-        {/* Right: Arrow */}
-        <div className="shrink-0">
-          <div
-            className="w-14 h-14 rounded-full border flex items-center justify-center transition-all duration-500 group-hover:border-white/20 group-hover:bg-white/5"
-            style={{
-              borderColor: "rgba(255,255,255,0.08)",
-              backgroundColor: "rgba(255,255,255,0.02)",
-            }}
+        <h3 className="text-3xl md:text-4xl font-heading font-bold text-white/80 group-hover:text-white transition-colors duration-300">
+          {project.title}
+        </h3>
+
+        <p className="text-white/35 max-w-4xl text-base lg:text-lg group-hover:text-white/60 transition-colors duration-300 leading-relaxed">
+          {project.desc}
+        </p>
+
+        {/* Tech stack pills */}
+        <div className="flex flex-wrap gap-2">
+          {project.tech.map((t) => (
+            <span
+              key={t}
+              className="text-[11px] font-mono tracking-wider uppercase px-3 py-1 rounded-full border border-white/[0.08] bg-white/[0.02] text-white/40 group-hover:text-white/60 group-hover:border-white/[0.12] transition-all duration-300"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+
+        {/* Two distinct, visually separated links: live + repo */}
+        <div className="flex flex-wrap gap-4 mt-2">
+          <a
+            href={project.links.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor-hover
+            aria-label={`${project.title} live demo`}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/10 bg-white/[0.03] hover:border-[#00f0ff]/40 hover:bg-[#00f0ff]/10 hover:shadow-[0_0_18px_rgba(0,240,255,0.15)] group/live transition-all duration-300"
           >
-            <ArrowUpRight className="w-6 h-6 text-white/40 group-hover:text-white transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
-          </div>
+            <ArrowUpRight className="w-4 h-4 group-hover:text-[#00f0ff]" />
+            <span className="text-sm font-sans text-white/60 group-hover:text-white transition-colors">
+              Live Demo
+            </span>
+          </a>
+
+          <a
+            href={project.links.repo}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor-hover
+            aria-label={`${project.title} GitHub repository`}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/10 bg-white/[0.03] hover:border-[#a855f7]/40 hover:bg-[#a855f7]/10 hover:shadow-[0_0_18px_rgba(168,85,247,0.15)] group/repo transition-all duration-300"
+          >
+            <GithubIcon className="w-4 h-4 group-hover:text-[#a855f7]" />
+            <span className="text-sm font-sans text-white/60 group-hover:text-white transition-colors">
+              GitHub Repo
+            </span>
+          </a>
         </div>
       </div>
-    </motion.a>
+    </motion.div>
   );
 }

@@ -1,7 +1,7 @@
 {
   "name": "subhamoy-datta-portfolio",
   "version": "1.0.0",
-  "description": "Portfolio of Subhamoy Datta. Full Stack Web Developer (MERN Stack), B.Tech CSE (AI & ML).",
+  "description": "Portfolio of Subhamoy Datta. GenAI Backend Developer building RAG pipelines, AI agents, and LLM-powered APIs. B.Tech CSE (AI \u0026 ML).",
   "author": "Subhamoy Datta",
   "private": true,
   "scripts": {

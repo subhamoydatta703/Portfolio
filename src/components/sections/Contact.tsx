@@ -29,10 +29,10 @@ export default function ContactSection() {
       className="relative w-full min-h-screen py-32 px-4 md:px-12 lg:px-24 flex flex-col justify-center transition-colors duration-700 hover:bg-white/[0.02]"
     >
       <motion.div
-        initial={{ opacity: 0, y: 60 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
-        transition={{ duration: 0.8, ease: "easeOut" as const }}
+        transition={{ duration: 0.6, ease: "easeOut" as const }}
         className="relative z-10 w-full"
       >
         {/* Section label */}
@@ -43,7 +43,7 @@ export default function ContactSection() {
         <div className="flex flex-col lg:flex-row justify-between gap-16 mt-8">
             {/* Left: CTA */}
             <div className="flex-1">
-              <h2 className="text-4xl md:text-7xl font-heading font-black leading-[0.9] tracking-tighter mb-8">
+              <h2 className="text-5xl md:text-8xl font-heading font-black uppercase leading-[0.85] tracking-tighter mb-8">
                 <span className="text-white">LET&apos;S BUILD</span>
                 <br />
                 <span className="text-cyan-accent">TOGETHER</span>
@@ -125,7 +125,7 @@ export default function ContactSection() {
       </motion.div>
 
       {/* Ambient glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70vw] h-[40vw] bg-gradient-to-t from-[#00f0ff]/5 via-[#a855f7]/3 to-transparent rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70vw] h-[40vw] bg-gradient-to-t from-[#00f0ff]/5 via-[#a855f7]/3 to-transparent rounded-full blur-[100px] pointer-events-none" />
     </section>
   );
 }

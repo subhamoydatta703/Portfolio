@@ -6,10 +6,10 @@ import { GithubIcon, LinkedinIcon, XIcon } from "../ui/SocialIcons";
 import MagneticButton from "../ui/MagneticButton";
 
 const subtitles = [
-  "Backend Developer",
-  "Problem Solver",
-  "AI & Backend Systems",
-  "Building Real Projects",
+  "GenAI Backend Developer",
+  "RAG & LLM Systems",
+  "AI Agents & Orchestration",
+  "Production Backends",
   "Computer Science Student",
 ];
 
@@ -54,7 +54,7 @@ export default function Hero() {
     <section
       id="hero"
       data-section
-      className="relative w-full min-h-screen flex flex-col justify-center px-4 md:px-12 lg:px-24 overflow-hidden transition-colors duration-700 hover:bg-white/[0.02]"
+      className="relative w-full min-h-screen flex flex-col justify-center px-4 md:px-12 lg:px-24 py-24 md:py-28 overflow-hidden transition-colors duration-700 hover:bg-white/[0.02]"
     >
       <motion.div
         variants={container}
@@ -109,7 +109,10 @@ export default function Hero() {
           variants={item}
           className="mt-8 text-lg md:text-xl text-white/40 max-w-2xl font-sans leading-relaxed"
         >
-         I&apos;m Subhamoy Datta — a Backend Developer specializing in AI-powered systems: RAG pipelines, LLM integration, and production-grade infrastructure built with TypeScript and modern cloud tooling.
+          I&apos;m Subhamoy Datta — a GenAI Backend Developer building and deploying
+          production AI systems: RAG pipelines, LLM-powered pipelines, and agent
+          orchestration. I work primarily in TypeScript, PostgreSQL/pgvector,
+          Redis, and BullMQ, and I publish open-source packages on npm.
         </motion.p>
 
         {/* DSA & Competitive Programming highlights */}
@@ -121,7 +124,7 @@ export default function Hero() {
             data-cursor-hover
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/[0.08] bg-white/[0.02] hover:border-[#00f0ff]/40 hover:bg-[#00f0ff]/5 transition-all duration-300 group"
           >
-            
+
             <span className="text-sm font-sans text-white/50 group-hover:text-white/80 transition-colors">Resume</span></a>
           {/* <a
             href="https://codeforces.com/profile/sub_algo"
@@ -140,10 +143,10 @@ export default function Hero() {
             data-cursor-hover
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/[0.08] bg-white/[0.02] hover:border-[#a855f7]/40 hover:bg-[#a855f7]/5 transition-all duration-300 group"
           >
-            
+
             <span className="text-sm font-sans text-white/50 group-hover:text-white/80 transition-colors">LeetCode</span>
           </a>
-          
+
         </motion.div>
 
         {/* Social Links */}
@@ -183,8 +186,8 @@ export default function Hero() {
       <div className="absolute top-[20%] left-[20%] w-1.5 h-1.5 bg-[#a855f7]/20 rounded-full animate-[float_10s_ease-in-out_infinite_3s] pointer-events-none" />
 
       {/* ─── Ambient gradient blobs ─── */}
-      <div className="absolute top-0 right-0 w-[60vw] h-[60vw] bg-gradient-to-bl from-[#00f0ff]/8 to-transparent rounded-full blur-[150px] -translate-y-1/3 translate-x-1/3 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[45vw] h-[45vw] bg-gradient-to-tr from-[#a855f7]/6 to-transparent rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[60vw] h-[60vw] bg-gradient-to-bl from-[#00f0ff]/8 to-transparent rounded-full blur-[90px] -translate-y-1/3 translate-x-1/3 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[45vw] h-[45vw] bg-gradient-to-tr from-[#a855f7]/6 to-transparent rounded-full blur-[80px] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
     </section>
   );
 }

@@ -25,9 +25,9 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Subhamoy Datta — Full Stack Developer & AI Explorer",
+  title: "Subhamoy Datta — GenAI Backend Developer",
   description:
-    "Portfolio of Subhamoy Datta. Full Stack Web Developer (MERN Stack), B.Tech CSE (AI & ML). DSA problem solver on Codeforces. Building production-grade web experiences with AI integrations.",
+    "Portfolio of Subhamoy Datta. GenAI Backend Developer building RAG pipelines, AI agents, and LLM-powered APIs with TypeScript, PostgreSQL/pgvector, Redis, and BullMQ. B.Tech CSE (AI & ML).",
   icons: {
     icon: "/favicon.svg",
   },
