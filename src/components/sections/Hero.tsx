@@ -118,7 +118,7 @@ export default function Hero() {
         {/* DSA & Competitive Programming highlights */}
         <motion.div variants={item} className="mt-8 flex flex-wrap gap-3">
           <a
-            href="https://drive.google.com/file/d/1vE3sctg74OdqGSEWuiJdBABOOwKZLYvl/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1HG5tOu883K9o1ZvmlJ0ZOHtczn3dwVbb/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             data-cursor-hover
