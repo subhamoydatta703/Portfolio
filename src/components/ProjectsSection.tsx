@@ -230,34 +230,32 @@ export default function ProjectsSection() {
             >
               <div>
                 {/* Header */}
-                <div className="flex items-start justify-between gap-4 mb-4">
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-amber-400 shrink-0 shadow-sm shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h3 className="text-xl font-bold text-white tracking-tight">
-                          {p.title}
-                        </h3>
-                        {p.isFeatured && (
-                          <Sparkles className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
-                        )}
-                      </div>
-                      <p className="text-xs font-mono text-zinc-400">
-                        {p.subtitle}
-                      </p>
-                    </div>
-                  </div>
+<div className="flex flex-col sm:flex-row sm:items-start items-start justify-between gap-3 sm:gap-4 mb-4">
+  <div className="flex items-center gap-3.5 min-w-0">
+    <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-amber-400 shrink-0 shadow-sm shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+      <Icon className="w-6 h-6" />
+    </div>
+    <div className="min-w-0">
+      <div className="flex items-center gap-2">
+        <h3 className="text-xl font-bold text-white tracking-tight truncate">
+          {p.title}
+        </h3>
+        {p.isFeatured && (
+          <Sparkles className="w-3.5 h-3.5 text-amber-400 fill-amber-400 shrink-0" />
+        )}
+      </div>
+      <p className="text-xs font-mono text-zinc-400 truncate">
+        {p.subtitle}
+      </p>
+    </div>
+  </div>
 
-                  {p.badge && (
-                    <span className="text-xs font-mono px-2.5 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-400 shrink-0 font-medium shadow-[inset_0_1px_0_0_rgba(251,191,36,0.15)]">
-                      {p.badge}
-                    </span>
-                  )}
-                </div>
-
-                {/* Quick copy command */}
+  {p.badge && (
+    <span className="text-xs font-mono px-2.5 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-400 font-medium shadow-[inset_0_1px_0_0_rgba(251,191,36,0.15)] self-start whitespace-nowrap max-w-full sm:shrink-0">
+      {p.badge}
+    </span>
+  )}
+</div>                {/* Quick copy command */}
                 {p.installCmd && (
                   <div className="mb-5">
                     <CopyButton text={p.installCmd} />
