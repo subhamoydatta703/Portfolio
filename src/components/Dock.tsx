@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import type Lenis from "lenis";
 import { motion } from "framer-motion";
 import {
   User,
@@ -19,6 +20,15 @@ import {
 export default function Dock() {
   const [activeSection, setActiveSection] = useState("hero");
 
+  // While a dock click is animating, the scroll-spy is locked so the pill
+  // stays on the clicked icon instead of flickering through intermediate
+  // sections mid-flight.
+  const navigationLock = useRef(false);
+  const navigationToken = useRef(0);
+  // After a click, the highlight stays pinned to that icon until the user
+  // scrolls on their own (wheel / touch / keyboard).
+  const pinnedSection = useRef<string | null>(null);
+
   useEffect(() => {
     const sectionIds = ["hero", "about", "skills", "projects", "recognition", "contact"];
     const elements = sectionIds
@@ -27,53 +37,107 @@ export default function Dock() {
 
     if (elements.length === 0) return;
 
-    // Use IntersectionObserver: 0 forced reflows, runs off-main-thread
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntries = entries.filter((e) => e.isIntersecting);
-        if (visibleEntries.length > 0) {
-          visibleEntries.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-          setActiveSection(visibleEntries[0].target.id);
-        }
-      },
-      {
-        rootMargin: "-15% 0px -40% 0px",
-        threshold: [0, 0.2, 0.5, 0.8],
-      }
-    );
+    // 40% of the viewport height — the visual reading line.
+    const readingLine = () => window.innerHeight * 0.4;
 
-    elements.forEach((el) => observer.observe(el));
-
-    // Throttled bottom check using requestAnimationFrame
     let ticking = false;
+    const updateActive = () => {
+      ticking = false;
+
+      // Locked while a dock-click animation is running.
+      if (navigationLock.current) return;
+
+      // Keep the clicked icon highlighted until the user scrolls manually.
+      if (pinnedSection.current) return;
+
+      if (window.scrollY < 4) {
+        setActiveSection("hero");
+        return;
+      }
+
+      // Scroll-spy: the active section is the last one whose top has crossed
+      // the reading line. Sections are in document order on the page.
+      let current = sectionIds[0];
+      for (const el of elements) {
+        if (el.getBoundingClientRect().top <= readingLine()) {
+          current = el.id;
+        } else {
+          break;
+        }
+      }
+
+      // Snap to the last section at the very bottom of the page.
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 4
+      ) {
+        current = "contact";
+      }
+
+      setActiveSection(current);
+    };
+
     const handleScroll = () => {
       if (!ticking) {
-        window.requestAnimationFrame(() => {
-          if (
-            window.innerHeight + window.scrollY >=
-            document.documentElement.scrollHeight - 60
-          ) {
-            setActiveSection("contact");
-          }
-          ticking = false;
-        });
+        window.requestAnimationFrame(updateActive);
         ticking = true;
       }
     };
 
+    // Any deliberate user scroll releases the click-pin so the spy resumes.
+    const releasePin = () => {
+      pinnedSection.current = null;
+    };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    window.addEventListener("wheel", releasePin, { passive: true });
+    window.addEventListener("touchstart", releasePin, { passive: true });
+    window.addEventListener("keydown", releasePin);
+
+    // Initial state at the top of the page.
+    updateActive();
 
     return () => {
-      observer.disconnect();
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+      window.removeEventListener("wheel", releasePin);
+      window.removeEventListener("touchstart", releasePin);
+      window.removeEventListener("keydown", releasePin);
     };
   }, []);
 
   const scrollTo = (id: string) => {
     setActiveSection(id);
     const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+    if (!el) return;
+
+    // Pin the clicked icon so no scroll-spy update can override it until the
+    // user scrolls manually.
+    pinnedSection.current = id;
+
+    const token = ++navigationToken.current;
+    navigationLock.current = true;
+
+    // Release the lock only for the most recent navigation — a quick second
+    // click wins and keeps its own highlight.
+    const release = () => {
+      if (navigationToken.current === token) {
+        navigationLock.current = false;
+      }
+    };
+
+    // Drive the scroll through the site's Lenis instance (published on window
+    // by SmoothScroll.tsx). Fall back to native smooth scrolling when Lenis is
+    // not mounted yet (first paint / reduced motion). A safety timer covers
+    // animations that are interrupted and never fire onComplete.
+    const lenis = (window as unknown as { __lenis?: Lenis }).__lenis;
+    if (lenis) {
+      lenis.scrollTo(el, { duration: 1.2, onComplete: release });
+      window.setTimeout(release, 1500);
+    } else {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.setTimeout(release, 800);
     }
   };
 
