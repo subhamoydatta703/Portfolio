@@ -51,11 +51,10 @@ export default function AboutSection() {
         {/* Bio */}
         <motion.p
           variants={itemVariants}
-          className="font-sans text-lg md:text-xl text-white/50 leading-relaxed mb-12 max-w-3xl"
+          className="font-sans text-lg md:text-xl text-white/60 leading-relaxed mb-12 max-w-3xl"
         >
-          Hey,
-          I learn by building: writing the code, breaking it, figuring
-          out why, and shipping it. Still a Computer Science student, still
+          Hey, I learn by building: writing the code, breaking it, figuring
+          out why, and shipping it. Open-source author/maintainer of two published npm packages: REXA (<span className="text-[#00f0ff] font-mono font-medium">rexa-agent</span>) and Somoy (<span className="text-[#00f0ff] font-mono font-medium">@subhamoy/somoy</span>), both MIT-licensed. Still a Computer Science student, still
           figuring plenty out — but the three cards below are where that habit
           actually goes.
         </motion.p>
@@ -66,11 +65,15 @@ export default function AboutSection() {
           className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl"
         >
           {/* Card 1: Backend Development */}
-          <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 hover:border-[#00f0ff]/20 hover:bg-[#00f0ff]/[0.02] transition-all duration-300">
-            <h3 className="text-lg font-heading font-bold mb-3 text-white/80">
+          <div
+            data-cursor-hover
+            className="group rounded-2xl border border-white/[0.08] border-t-2 border-t-[#00f0ff]/80 bg-white/[0.02] p-8 hover:border-[#00f0ff]/40 hover:bg-[#00f0ff]/[0.03] hover:shadow-[0_0_25px_rgba(0,240,255,0.1)] transition-all duration-300"
+          >
+            <span className="inline-block text-xs font-mono tracking-widest text-[#00f0ff] uppercase mb-2">01 // Architecture</span>
+            <h3 className="text-xl font-heading font-bold mb-3 text-white group-hover:text-[#00f0ff] transition-colors">
               Backend Development
             </h3>
-            <p className="text-sm text-white/40 font-sans leading-relaxed">
+            <p className="text-sm text-white/60 font-sans leading-relaxed">
               Building server-side systems with Node.js, Express, PostgreSQL,
               Redis, and BullMQ. I care about how data flows, how queues
               behave under load, and why things break in production.
@@ -78,11 +81,15 @@ export default function AboutSection() {
           </div>
 
           {/* Card 2: GenAI Engineering */}
-          <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 hover:border-[#a855f7]/20 hover:bg-[#a855f7]/[0.02] transition-all duration-300">
-            <h3 className="text-lg font-heading font-bold mb-3 text-white/80">
+          <div
+            data-cursor-hover
+            className="group rounded-2xl border border-white/[0.08] border-t-2 border-t-[#a855f7]/80 bg-white/[0.02] p-8 hover:border-[#a855f7]/40 hover:bg-[#a855f7]/[0.03] hover:shadow-[0_0_25px_rgba(168,85,247,0.1)] transition-all duration-300"
+          >
+            <span className="inline-block text-xs font-mono tracking-widest text-[#a855f7] uppercase mb-2">02 // Intelligence</span>
+            <h3 className="text-xl font-heading font-bold mb-3 text-white group-hover:text-[#a855f7] transition-colors">
               GenAI Engineering
             </h3>
-            <p className="text-sm text-white/40 font-sans leading-relaxed">
+            <p className="text-sm text-white/60 font-sans leading-relaxed">
               Integrating LLMs into production backends — RAG pipelines with
               pgvector similarity search and async embedding jobs, plus
               LLM-powered analysis and generation with structured, cached output.
@@ -91,16 +98,20 @@ export default function AboutSection() {
             </p>
           </div>
 
-          {/* Card 3: Agent Orchestration */}
-          <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 hover:border-[#22c55e]/20 hover:bg-[#22c55e]/[0.02] transition-all duration-300">
-            <h3 className="text-lg font-heading font-bold mb-3 text-white/80">
-              AI Agent Orchestration
+          {/* Card 3: Agentic Harnesses & System Design */}
+          <div
+            data-cursor-hover
+            className="group rounded-2xl border border-white/[0.08] border-t-2 border-t-[#22c55e]/80 bg-white/[0.02] p-8 hover:border-[#22c55e]/40 hover:bg-[#22c55e]/[0.03] hover:shadow-[0_0_25px_rgba(34,197,94,0.1)] transition-all duration-300"
+          >
+            <span className="inline-block text-xs font-mono tracking-widest text-[#22c55e] uppercase mb-2">03 // Autonomous Systems</span>
+            <h3 className="text-xl font-heading font-bold mb-3 text-white group-hover:text-[#22c55e] transition-colors">
+              Agentic Harnesses & System Design
             </h3>
-            <p className="text-sm text-white/40 font-sans leading-relaxed">
-              Building AI agents from the ground up — tool-calling and reasoning
-              loops, sandboxed command execution, and input/output/tool guardrails
-              that keep agents safe to run autonomously, with a provider-agnostic
-              interface and typed, structured outputs.
+            <p className="text-sm text-white/60 font-sans leading-relaxed">
+              Building autonomous CLI agent harnesses and SDKs — dynamic tool-calling
+              loops, Docker-sandboxed non-root execution, verified state re-reading,
+              input/output guardrails with secret scanning, host/sandbox git trust
+              boundaries, and OS credential vaults (`keytar`).
             </p>
           </div>
         </motion.div>

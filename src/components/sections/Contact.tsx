@@ -48,7 +48,7 @@ export default function ContactSection() {
                 <br />
                 <span className="text-cyan-accent">TOGETHER</span>
               </h2>
-              <p className="font-sans text-lg text-white/40 leading-relaxed max-w-lg mb-10">
+              <p className="font-sans text-lg text-white/60 leading-relaxed max-w-lg mb-10">
                 I&apos;m always interested in hearing about new projects,
                 creative collaborations, or opportunities to push the
                 boundaries of what&apos;s possible on the web.

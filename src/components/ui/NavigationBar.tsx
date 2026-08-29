@@ -14,9 +14,10 @@ export default function NavigationBar() {
   const lenis = useLenis();
 
   const navItems = [
-    { name: "Work", id: "work", num: "01" },
-    { name: "About", id: "about", num: "02" },
-    { name: "Contact", id: "contact", num: "03" },
+    { name: "About", id: "about", num: "01" },
+    { name: "Work", id: "work", num: "02" },
+    { name: "Tech", id: "tech-stack", num: "03" },
+    { name: "Contact", id: "contact", num: "04" },
   ];
 
   // Scroll-aware visibility & backdrop
@@ -55,11 +56,16 @@ export default function NavigationBar() {
   const handleScrollTo = (id: string) => {
     setActiveSection(id);
     setMobileOpen(false);
-    lenis?.scrollTo(`#${id}`, {
-      offset: 0,
-      duration: 1.5,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    });
+    if (lenis) {
+      lenis.scrollTo(`#${id}`, {
+        offset: 0,
+        duration: 1.2,
+        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      });
+    } else {
+      const el = document.getElementById(id);
+      el?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -70,38 +76,45 @@ export default function NavigationBar() {
         transition={{ duration: 0.3, ease: "easeOut" as const }}
         className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 py-5 md:px-12 transition-all duration-500 ${
           hasScrolled
-            ? "bg-[#050505]/70 backdrop-blur-xl border-b border-white/5"
+            ? "bg-[#050505]/75 backdrop-blur-xl border-b border-white/5 shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
             : "bg-transparent"
         }`}
       >
         <button
           onClick={() => handleScrollTo("hero")}
-          className="font-heading font-bold text-lg tracking-tighter uppercase relative z-10 group cursor-none focus:outline-none"
+          className="font-heading font-bold text-lg tracking-tighter uppercase relative z-10 group cursor-none focus:outline-none flex items-center gap-2"
           data-cursor-hover
         >
-          <span className="text-gradient">SUBHAMOY</span>
+          <span className="w-2.5 h-2.5 rounded-full bg-[#00f0ff] animate-pulse" />
+          <span className="text-white group-hover:text-[#00f0ff] transition-colors duration-300">SUBHAMOY</span>
         </button>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-10 relative z-10">
+        <nav className="hidden md:flex gap-8 relative z-10">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             return (
               <button
                 key={item.id}
                 onClick={() => handleScrollTo(item.id)}
-                className="relative px-2 py-1 font-sans text-sm tracking-widest uppercase cursor-none focus:outline-none group"
+                className="relative px-3 py-1 font-sans text-xs tracking-[0.2em] uppercase cursor-none focus:outline-none group flex flex-col items-center"
                 data-cursor-hover
               >
                 <span
-                  className={`transition-colors duration-300 ${
-                    isActive ? "text-white" : "text-white/40 group-hover:text-white"
+                  className={`transition-colors duration-300 font-medium ${
+                    isActive ? "text-[#00f0ff]" : "text-white/40 group-hover:text-white"
                   }`}
                 >
                   {item.name}
                 </span>
 
-
+                {isActive && (
+                  <motion.div
+                    layoutId="activeNavIndicator"
+                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#00f0ff] rounded-full shadow-[0_0_8px_#00f0ff]"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
               </button>
             );
           })}
