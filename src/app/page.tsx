@@ -1,29 +1,37 @@
-import Hero from "@/components/sections/Hero";
-import TechStack from "@/components/sections/TechStack";
-import ProjectGallery from "@/components/sections/ProjectGallery";
-import AboutSection from "@/components/sections/About";
-import ContactSection from "@/components/sections/Contact";
+import Hero from "@/components/Hero";
+import AboutSection from "@/components/AboutSection";
+import SkillsSection from "@/components/SkillsSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import RecognitionSection from "@/components/RecognitionSection";
+import ContactSection from "@/components/ContactSection";
+import Dock from "@/components/Dock";
 
 export default function Home() {
   return (
-    <article className="relative w-full">
-      <Hero />
+    <div className="relative min-h-screen bg-[#09090b] text-zinc-300 selection:bg-amber-500/20 selection:text-white">
+      {/* Absolute Tile-Cached Background Grid - 0 Scroll Repaints */}
+      <div
+        className="pointer-events-none absolute inset-0 z-0 opacity-40"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
+          `,
+          backgroundSize: "36px 36px",
+        }}
+      />
 
-      <div className="relative z-30 bg-[#080808] shadow-[0_-30px_60px_rgba(0,0,0,0.6)]">
+      <main className="relative z-10 max-w-5xl mx-auto px-6 sm:px-10 md:px-14 pb-28">
+        <Hero />
         <AboutSection />
-      </div>
-      <div className="relative z-20 bg-[#050505]">
-        <ProjectGallery />
-      </div>
-      <div className="relative z-[15] bg-[#050505]">
-        <TechStack />
-      </div>
-
-
-
-      <div className="relative z-40 bg-[#050505] shadow-[0_-30px_60px_rgba(0,0,0,0.6)]">
+        <SkillsSection />
+        <ProjectsSection />
+        <RecognitionSection />
         <ContactSection />
-      </div>
-    </article>
+      </main>
+
+      {/* Floating Bottom Dock Navigation */}
+      <Dock />
+    </div>
   );
 }
