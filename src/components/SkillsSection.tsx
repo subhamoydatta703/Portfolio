@@ -1,129 +1,132 @@
-import { Code2 } from "lucide-react";
-import type { ComponentType } from "react";
-import SectionHeading from "./SectionHeading";
-import { glassCardBase } from "../lib/classes";
-import {
-  TypeScriptIcon,
-  BunIcon,
-  DockerIcon,
-  GeminiIcon,
-  OpenAIIcon,
-  TavilyIcon,
-  AgentLoopIcon,
-  GitTrustIcon,
-  ScanSecretIcon,
-  ZodIcon,
-  PostgresIcon,
-  RedisIcon,
-  AwsIcon,
-  ClerkIcon,
-  KeyIcon,
-  JwtIcon,
-  NextjsIcon,
-  ExpressIcon,
-  LangChainIcon,
-  MongoIcon,
-  TailwindIcon,
-  NpmIcon,
-} from "./Icons";
+"use client";
 
-interface Skill {
-  name: string;
-  icon: ComponentType<{ className?: string }>;
-}
+import { useState } from "react";
+import { Code2 } from "lucide-react";
+import SectionHeading from "./SectionHeading";
+import { glassCardBase, techPillClass } from "../lib/classes";
 
 interface SkillCategory {
-  title: string;
-  skills: Skill[];
+  label: string;
+  skills: string[];
 }
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "AI & Agentic Systems",
+    label: "AI & Agent",
     skills: [
-      { name: "Gemini API", icon: GeminiIcon },
-      { name: "OpenAI API", icon: OpenAIIcon },
-      { name: "Tavily API", icon: TavilyIcon },
-      { name: "LangChain", icon: LangChainIcon },
-      { name: "Agent Loops & Handoffs", icon: AgentLoopIcon },
-      { name: "Zod Schema I/O", icon: ZodIcon },
-      { name: "Host Git Trust Boundaries", icon: GitTrustIcon },
+      "Agentic Harness & Multi-Agent System Design",
+      "Tool-/Function-Calling Systems",
+      "Multi-Provider LLM Integration",
+      "Agent Loops & Handoffs",
+      "Zod Schema I/O",
+      "Typed RunResult Failure States",
+      "Loop Detection",
+      "Host vs Sandbox Git Trust Boundaries",
+      "Gemini API",
+      "OpenAI API",
+      "Tavily API",
+      "LangChain",
+      "Retrieval-Augmented Generation (RAG)",
+      "Prompt Engineering",
     ],
   },
   {
-    title: "Backend & Full-Stack",
+    label: "Backend",
     skills: [
-      { name: "TypeScript", icon: TypeScriptIcon },
-      { name: "Bun & Node.js", icon: BunIcon },
-      { name: "Next.js & React", icon: NextjsIcon },
-      { name: "Express.js & Vite", icon: ExpressIcon },
-      { name: "PostgreSQL & pgvector", icon: PostgresIcon },
-      { name: "Redis & BullMQ Queues", icon: RedisIcon },
-      { name: "MongoDB & Prisma ORM", icon: MongoIcon },
-      { name: "Tailwind CSS", icon: TailwindIcon },
+      "Bun & Node.js",
+      "Express.js",
+      "Next.js & React",
+      "Vite",
+      "REST API Design",
+      "CLI Tooling",
+      "API Integration",
+      "BullMQ",
+      "Queue-Based Architecture",
+      "Asynchronous Processing",
+      "Redis Caching",
     ],
   },
   {
-    title: "Security, Cloud & Tooling",
+    label: "Databases",
     skills: [
-      { name: "Docker", icon: DockerIcon },
-      { name: "AWS", icon: AwsIcon },
-      { name: "JWT & OAuth 2.0 Auth", icon: JwtIcon },
-      { name: "Clerk Authentication", icon: ClerkIcon },
-      { name: "OS Credential Vault (keytar)", icon: KeyIcon },
-      { name: "Input/Output Secret Scanning", icon: ScanSecretIcon },
-      { name: "npm Package Publishing", icon: NpmIcon },
+      "PostgreSQL",
+      "pgvector",
+      "MongoDB",
+      "Redis",
+      "Neo4j (Cypher)",
+      "SQL",
+      "Database Design",
+    ],
+  },
+  {
+    label: "Auth & Security",
+    skills: [
+      "Clerk",
+      "JWT",
+      "OAuth 2.0",
+      "bcryptjs",
+      "Webhook Verification (Svix)",
+      "OS Credential Vaults (keytar)",
+      "Guardrails & Secret Scanning",
+      "Sandboxed execution",
+    ],
+  },
+  {
+    label: "Cloud & Infra",
+    skills: ["AWS", "Docker", "Docker Compose", "Vercel", "Render"],
+  },
+  {
+    label: "Languages",
+    skills: ["TypeScript", "Python", "JavaScript", "Java"],
+  },
+  {
+    label: "Tools",
+    skills: ["Git", "GitHub", "Postman", "Prisma ORM"],
+  },
+  {
+    label: "Contributions",
+    skills: [
+      "rexa-agent — published npm package (MIT), 125+ downloads",
+      "@subhamoy/somoy — published npm package (MIT), 1,000+ downloads",
     ],
   },
 ];
 
 export default function SkillsSection() {
+  const [active, setActive] = useState(0);
+
   return (
     <section
       id="skills"
       aria-labelledby="skills-heading"
       className="py-16 sm:py-20 border-b border-white/[0.08]"
     >
-      <SectionHeading
-        icon={Code2}
-        id="skills-heading"
-        title="Technical Stack & Architecture"
-      />
+      <SectionHeading id="skills-heading" title="Technical Stack & Architecture" />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="flex flex-wrap gap-2 mb-6">
         {skillCategories.map((cat, idx) => (
-          <div
-            key={cat.title}
-            className={`p-7 ${glassCardBase} hover:border-white/[0.2] flex flex-col justify-between shadow-md shadow-black/40`}
+          <button
+            key={cat.label}
+            onClick={() => setActive(idx)}
+            className={`px-4 py-2 rounded-full text-xs sm:text-sm font-mono font-medium border transition-colors whitespace-nowrap ${
+              active === idx
+                ? "bg-[#5B8DFF]/10 border-[#5B8DFF]/40 text-[#5B8DFF]"
+                : "bg-white/[0.03] border-white/[0.08] text-zinc-400 hover:text-zinc-200 hover:border-white/[0.2]"
+            }`}
           >
-            <div>
-              <div className="flex items-center justify-between gap-2 mb-6 pb-3 border-b border-white/[0.08]">
-                <h3 className="text-xs font-mono font-semibold uppercase tracking-wider text-amber-400">
-                  {cat.title}
-                </h3>
-                <span className="text-[10px] font-mono text-zinc-500">
-                  0{idx + 1}
-                </span>
-              </div>
-
-              <ul className="space-y-3.5">
-                {cat.skills.map((skill) => (
-                  <li
-                    key={skill.name}
-                    className="flex items-center gap-3 text-sm text-zinc-300 group"
-                  >
-                    <div className="p-1.5 rounded-lg bg-white/[0.04] border border-white/[0.08] text-zinc-400 group-hover:text-amber-400 group-hover:border-amber-500/40 transition-colors shrink-0 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
-                      <skill.icon className="w-4 h-4" />
-                    </div>
-                    <span className="font-medium group-hover:text-white transition-colors">
-                      {skill.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+            {cat.label}
+          </button>
         ))}
+      </div>
+
+      <div className={`p-7 sm:p-8 ${glassCardBase} shadow-md shadow-black/40`}>
+        <div className="flex flex-wrap gap-2.5">
+          {skillCategories[active].skills.map((skill) => (
+            <span key={skill} className={techPillClass}>
+              {skill}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );

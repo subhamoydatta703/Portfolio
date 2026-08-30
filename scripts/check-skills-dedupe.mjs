@@ -2,6 +2,14 @@
 /**
  * Pre-build guard for the skills section. Fails the build if any skill is
  * duplicated or if the marquee duplication pattern is reintroduced.
+ *
+ * Matches the current SkillsSection.tsx data shape:
+ *   const skillCategories: SkillCategory[] = [
+ *     { label: "AI & Agent", skills: ["Zod Schema I/O", "Loop Detection", ...] },
+ *     ...
+ *   ];
+ * i.e. categories are keyed by `label`, and each category's `skills` is a
+ * plain array of quoted strings (not objects with a `name` field).
  */
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative, dirname, resolve } from "node:path";
@@ -35,20 +43,26 @@ try {
 }
 
 const catMatch = skillsSource.match(
-  /const\s+skillCategories[^=]*=\s*\[([\s\S]*?)\n\s*\];/
+  /const\s+skillCategories[^=]*=\s*\[([\s\S]*?)\n\];/
 );
 if (!catMatch) {
   FAILURES.push(`Could not locate \`skillCategories\` in ${relative(root, skillsPath)}`);
 } else {
   const block = catMatch[1];
-  const nameRe = /name:\s*"([^"]+)"/g;
-  const titleRe = /title:\s*"([^"]+)"/g;
 
-  const names = [];
+  // Split into individual category objects: { label: "...", skills: [...] }
+  const categoryRe = /label:\s*"([^"]+)"[\s\S]*?skills:\s*\[([\s\S]*?)\]\s*,?\s*\}/g;
+
   const titles = [];
-  let m;
-  while ((m = nameRe.exec(block))) names.push(m[1]);
-  while ((m = titleRe.exec(block))) titles.push(m[1]);
+  const names = [];
+  let cat;
+  while ((cat = categoryRe.exec(block))) {
+    titles.push(cat[1]);
+    const skillsBlock = cat[2];
+    const stringRe = /"((?:[^"\\]|\\.)*)"/g;
+    let s;
+    while ((s = stringRe.exec(skillsBlock))) names.push(s[1]);
+  }
 
   if (titles.length === 0) FAILURES.push("Found 0 skill categories");
   if (names.length === 0) FAILURES.push("Found 0 skills");

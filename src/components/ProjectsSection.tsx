@@ -1,34 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { ComponentType } from "react";
-import {
-  FolderGit2,
-  ArrowUpRight,
-  Copy,
-  Check,
-  Terminal,
-  Cpu,
-  Layers,
-  FileCheck2,
-  Sparkles,
-} from "lucide-react";
-import {
-  TypeScriptIcon,
-  BunIcon,
-  DockerIcon,
-  GeminiIcon,
-  SearchIcon,
-  KeyIcon,
-  OpenAIIcon,
-  ZodIcon,
-  PostgresIcon,
-  RedisIcon,
-  S3Icon,
-  ClerkIcon,
-  GithubIcon,
-  NpmIcon,
-} from "./Icons";
+import { Copy, Check } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import { projectCardTail, techPillClass } from "../lib/classes";
 
@@ -39,12 +12,10 @@ interface Project {
   badge?: string;
   isFeatured?: boolean;
   installCmd?: string;
-  icon: ComponentType<{ className?: string }>;
-  tech: { name: string; icon: ComponentType<{ className?: string }> }[];
+  tech: string[];
   links: {
     label: string;
     href: string;
-    icon?: ComponentType<{ className?: string }>;
   }[];
 }
 
@@ -55,27 +26,24 @@ const projects: Project[] = [
     badge: "npm: rexa-agent",
     isFeatured: true,
     installCmd: "npx rexa-agent",
-    icon: Terminal,
     description:
-      "Published npm package (rexa-agent). TypeScript, Bun, Docker Compose, Gemini API, Tavily API, keytar. Runs in a non-root Docker sandbox; input/output guardrails with secret scanning; OS-level credential vault; pauses for confirmation on consequential actions (git ops, installs, deletes).",
+      "Published npm package (rexa-agent) [ADD: npm weekly downloads]. TypeScript, Bun, Docker Compose, Gemini API, Tavily API, keytar. Runs in a non-root Docker sandbox [ADD: median sandbox startup time]; input/output guardrails with secret scanning; OS-level credential vault; pauses for confirmation on consequential actions (git ops, installs, deletes).",
     tech: [
-      { name: "TypeScript", icon: TypeScriptIcon },
-      { name: "Bun", icon: BunIcon },
-      { name: "Docker Compose", icon: DockerIcon },
-      { name: "Gemini API", icon: GeminiIcon },
-      { name: "Tavily API", icon: SearchIcon },
-      { name: "keytar Vault", icon: KeyIcon },
+      "TypeScript",
+      "Bun",
+      "Docker Compose",
+      "Gemini API",
+      "Tavily API",
+      "keytar Vault",
     ],
     links: [
       {
         label: "npm Package",
         href: "https://npmjs.com/package/rexa-agent",
-        icon: NpmIcon,
       },
       {
         label: "GitHub Repo",
         href: "https://github.com/subhamoydatta703/REXA",
-        icon: GithubIcon,
       },
     ],
   },
@@ -85,26 +53,23 @@ const projects: Project[] = [
     badge: "npm: @subhamoy/somoy",
     isFeatured: true,
     installCmd: "npm i @subhamoy/somoy",
-    icon: Cpu,
     description:
-      "Published npm package (@subhamoy/somoy). Provider-agnostic (Gemini, OpenAI, offline MockProvider), Zod-typed tool I/O, typed RunResult failure states instead of exceptions, loop detection, agent handoffs with transcript transfer.",
+      "Published npm package (@subhamoy/somoy) [ADD: npm weekly downloads]. Provider-agnostic (Gemini, OpenAI, offline MockProvider) with Zod-typed tool I/O [ADD: per tool-call round-trip time], typed RunResult failure states instead of exceptions, loop detection, agent handoffs with transcript transfer.",
     tech: [
-      { name: "TypeScript", icon: TypeScriptIcon },
-      { name: "Bun", icon: BunIcon },
-      { name: "Gemini API", icon: GeminiIcon },
-      { name: "OpenAI", icon: OpenAIIcon },
-      { name: "Zod", icon: ZodIcon },
+      "TypeScript",
+      "Bun",
+      "Gemini API",
+      "OpenAI",
+      "Zod",
     ],
     links: [
       {
         label: "npm Package",
         href: "https://npmjs.com/package/@subhamoy/somoy",
-        icon: NpmIcon,
       },
       {
         label: "GitHub Repo",
         href: "https://github.com/subhamoydatta703/Agent-SDK",
-        icon: GithubIcon,
       },
     ],
   },
@@ -113,17 +78,16 @@ const projects: Project[] = [
     subtitle: "RAG Document Intelligence Platform",
     badge: "Full-Stack RAG Platform",
     isFeatured: false,
-    icon: Layers,
     description:
-      "PDF/URL/YouTube/text ingestion, pgvector similarity search, async Redis/BullMQ embedding pipeline, AWS S3, Clerk auth.",
+      "PDF/URL/YouTube/text ingestion, pgvector similarity search [ADD: p95 query latency], async Redis/BullMQ embedding pipeline [ADD: documents ingested per minute], AWS S3, Clerk auth.",
     tech: [
-      { name: "TypeScript", icon: TypeScriptIcon },
-      { name: "PostgreSQL", icon: PostgresIcon },
-      { name: "pgvector", icon: PostgresIcon },
-      { name: "Redis", icon: RedisIcon },
-      { name: "BullMQ", icon: BunIcon },
-      { name: "AWS S3", icon: S3Icon },
-      { name: "Clerk", icon: ClerkIcon },
+      "TypeScript",
+      "PostgreSQL",
+      "pgvector",
+      "Redis",
+      "BullMQ",
+      "AWS S3",
+      "Clerk",
     ],
     links: [
       {
@@ -133,7 +97,6 @@ const projects: Project[] = [
       {
         label: "GitHub Repo",
         href: "https://github.com/subhamoydatta703/DocSense",
-        icon: GithubIcon,
       },
     ],
   },
@@ -142,16 +105,15 @@ const projects: Project[] = [
     subtitle: "AI Resume Analysis Platform",
     badge: "Async AI Pipeline",
     isFeatured: false,
-    icon: FileCheck2,
     description:
-      "Gemini-generated feedback, async BullMQ/Redis pipeline, AWS S3, Clerk auth.",
+      "Gemini-generated feedback, async BullMQ/Redis pipeline [ADD: average analysis turnaround time], AWS S3, Clerk auth.",
     tech: [
-      { name: "TypeScript", icon: TypeScriptIcon },
-      { name: "Redis", icon: RedisIcon },
-      { name: "BullMQ", icon: BunIcon },
-      { name: "AWS S3", icon: S3Icon },
-      { name: "Gemini API", icon: GeminiIcon },
-      { name: "Clerk", icon: ClerkIcon },
+      "TypeScript",
+      "Redis",
+      "BullMQ",
+      "AWS S3",
+      "Gemini API",
+      "Clerk",
     ],
     links: [
       {
@@ -161,7 +123,6 @@ const projects: Project[] = [
       {
         label: "GitHub Repo",
         href: "https://github.com/subhamoydatta703/Resumark",
-        icon: GithubIcon,
       },
     ],
   },
@@ -176,7 +137,7 @@ function CopyButton({ text }: { text: string }) {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // ignore
+      // Ignore clipboard errors.
     }
   };
 
@@ -188,11 +149,12 @@ function CopyButton({ text }: { text: string }) {
       aria-label="Copy command"
     >
       <span className="text-zinc-500">$</span>
-      <span className="text-amber-300">{text}</span>
+      <span className="text-[#5B8DFF]">{text}</span>
+
       {copied ? (
         <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 ml-1" />
       ) : (
-        <Copy className="w-3.5 h-3.5 text-zinc-500 hover:text-zinc-300 shrink-0 ml-1" />
+        <Copy className="w-3.5 h-3.5 text-zinc-500 shrink-0 ml-1" />
       )}
     </button>
   );
@@ -205,7 +167,6 @@ export default function ProjectsSection() {
       className="py-16 sm:py-20 border-b border-white/[0.08]"
     >
       <SectionHeading
-        icon={FolderGit2}
         title="Featured Projects"
         trailing={
           <span className="text-xs font-mono text-zinc-500 hidden sm:inline-block">
@@ -215,90 +176,70 @@ export default function ProjectsSection() {
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {projects.map((p) => {
-          const Icon = p.icon;
-          return (
-            <article
-              key={p.title}
-              className={`p-7 sm:p-8 rounded-2xl border ${
-                p.isFeatured
-                  ? "border-white/[0.12] bg-[#121215]/90 bg-gradient-to-b from-white/[0.04] to-transparent shadow-xl shadow-black/50"
-                  : "border-white/[0.08] bg-[#121215]/85 bg-gradient-to-b from-white/[0.03] to-transparent shadow-md shadow-black/40"
-              } ${projectCardTail}`}
-            >
-              <div>
-                <div className="flex flex-col sm:flex-row sm:items-start items-start justify-between gap-3 sm:gap-4 mb-4">
-                  <div className="flex items-center gap-3.5 min-w-0">
-                    <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-amber-400 shrink-0 shadow-sm shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <div className="min-w-0">
-                      <div className="flex items-center gap-2">
-                        <h3 className="text-xl font-bold text-white tracking-tight truncate">
-                          {p.title}
-                        </h3>
-                        {p.isFeatured && (
-                          <Sparkles className="w-3.5 h-3.5 text-amber-400 fill-amber-400 shrink-0" />
-                        )}
-                      </div>
-                      <p className="text-xs font-mono text-zinc-400 truncate">
-                        {p.subtitle}
-                      </p>
-                    </div>
-                  </div>
+        {projects.map((p) => (
+          <article
+            key={p.title}
+            className={`p-7 sm:p-8 rounded-2xl border ${
+              p.isFeatured
+                ? "border-white/[0.12] bg-[#121215]/90 bg-gradient-to-b from-white/[0.04] to-transparent shadow-xl shadow-black/50"
+                : "border-white/[0.08] bg-[#121215]/85 bg-gradient-to-b from-white/[0.03] to-transparent shadow-md shadow-black/40"
+            } ${projectCardTail}`}
+          >
+            <div>
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4 mb-4">
+                <div className="min-w-0">
+                  <h3 className="text-xl font-bold text-white tracking-tight">
+                    {p.title}
+                  </h3>
 
-                  {p.badge && (
-                    <span className="text-xs font-mono px-2.5 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-400 font-medium shadow-[inset_0_1px_0_0_rgba(251,191,36,0.15)] self-start whitespace-nowrap max-w-full sm:shrink-0">
-                      {p.badge}
-                    </span>
-                  )}
+                  <p className="text-xs font-mono text-zinc-400 mt-1">
+                    {p.subtitle}
+                  </p>
                 </div>
-                {p.installCmd && (
-                  <div className="mb-5">
-                    <CopyButton text={p.installCmd} />
-                  </div>
+
+                {p.badge && (
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-full border border-[#5B8DFF]/30 bg-[#5B8DFF]/10 text-[#5B8DFF] font-medium self-start whitespace-nowrap max-w-full sm:shrink-0">
+                    {p.badge}
+                  </span>
                 )}
-
-                <p className="text-sm text-zinc-300 leading-relaxed mb-6">
-                  {p.description}
-                </p>
               </div>
 
-              <div>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {p.tech.map((t) => (
-                    <span
-                      key={t.name}
-                      className={techPillClass}
-                    >
-                      <t.icon className="w-3.5 h-3.5 text-zinc-400" />
-                      <span>{t.name}</span>
-                    </span>
-                  ))}
+              {p.installCmd && (
+                <div className="mb-5">
+                  <CopyButton text={p.installCmd} />
                 </div>
+              )}
 
-                <div className="flex items-center gap-4 pt-3 border-t border-white/[0.08]">
-                  {p.links.map((link) => {
-                    const LinkIcon = link.icon;
-                    return (
-                      <a
-                        key={link.label}
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-zinc-300 hover:text-amber-400 transition-colors group"
-                      >
-                        {LinkIcon && <LinkIcon className="w-4 h-4 text-zinc-400 group-hover:text-amber-400 transition-colors" />}
-                        <span>{link.label}</span>
-                        <ArrowUpRight className="w-3.5 h-3.5 text-zinc-500 group-hover:text-amber-400 transition-colors" />
-                      </a>
-                    );
-                  })}
-                </div>
+              <p className="text-sm text-zinc-300 leading-relaxed mb-6">
+                {p.description}
+              </p>
+            </div>
+
+            <div>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {p.tech.map((tech) => (
+                  <span key={tech} className={techPillClass}>
+                    {tech}
+                  </span>
+                ))}
               </div>
-            </article>
-          );
-        })}
+
+              <div className="flex items-center gap-5 pt-4 border-t border-white/[0.08]">
+                {p.links.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs sm:text-sm font-medium text-zinc-300 hover:text-[#5B8DFF] transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );

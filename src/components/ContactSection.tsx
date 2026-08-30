@@ -25,27 +25,29 @@ export default function ContactSection() {
       id="contact"
       className="py-16 sm:py-20"
     >
-      <SectionHeading icon={Mail} title="Get In Touch" />
+      <SectionHeading  title="Get In Touch" />
 
       <div className={`p-8 sm:p-10 ${glassCardBase} hover:border-white/[0.2] space-y-8 shadow-xl shadow-black/40`}>
         <p className="text-base text-zinc-300 max-w-2xl leading-relaxed">
-          Always open to discussing production AI architectures, backend systems,
-          open-source collaborations, and engineering opportunities.
+          Currently looking for an AI/ML or backend engineering internship to
+          build on the work I've shipped so far. I'm always open to
+          collaborating on agent and RAG systems — if you're building at a
+          product company in the space, I'd love to talk.
         </p>
 
         <div className="flex flex-wrap items-center gap-4">
           <a
             href={`mailto:${email}`}
-            className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-[#18181b]/90 hover:bg-zinc-700 text-white text-sm font-mono transition-all border border-white/[0.1] shadow-sm hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-[#18181b]/90 hover:bg-zinc-700 text-white text-sm font-mono transition-colors border border-white/[0.1] shadow-sm"
           >
-            <Mail className="w-4 h-4 text-amber-400" />
+            <Mail className="w-4 h-4 text-[#5B8DFF]" />
             <span>{email}</span>
             <ArrowUpRight className="w-4 h-4 text-zinc-400" />
           </a>
 
           <button
             onClick={handleCopy}
-            className="inline-flex items-center gap-2 px-4 py-3 rounded-xl border border-white/[0.1] bg-white/[0.04] hover:bg-white/[0.08] text-zinc-300 hover:text-white text-sm font-mono transition-all shadow-sm hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex items-center gap-2 px-4 py-3 rounded-xl border border-white/[0.1] bg-white/[0.04] hover:bg-white/[0.08] text-zinc-300 hover:text-white text-sm font-mono transition-colors shadow-sm"
             title="Copy email address"
             aria-label="Copy email address"
           >
@@ -68,7 +70,7 @@ export default function ContactSection() {
             href="https://github.com/subhamoydatta703"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 hover:text-amber-400 transition-colors"
+            className="inline-flex items-center gap-2 hover:text-[#5B8DFF] transition-colors"
           >
             <GithubIcon className="w-4 h-4" />
             <span>GitHub</span>
@@ -78,7 +80,7 @@ export default function ContactSection() {
             href="https://www.linkedin.com/in/subhamoy-datta"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 hover:text-amber-400 transition-colors"
+            className="inline-flex items-center gap-2 hover:text-[#5B8DFF] transition-colors"
           >
             <LinkedinIcon className="w-4 h-4" />
             <span>LinkedIn</span>
@@ -88,7 +90,7 @@ export default function ContactSection() {
             href="https://x.com/codebysubhamoy"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 hover:text-amber-400 transition-colors"
+            className="inline-flex items-center gap-2 hover:text-[#5B8DFF] transition-colors"
           >
             <XIcon className="w-4 h-4" />
             <span>Twitter</span>
@@ -98,7 +100,7 @@ export default function ContactSection() {
             href="https://leetcode.com/u/26W5VCTCTA"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 hover:text-amber-400 transition-colors"
+            className="inline-flex items-center gap-2 hover:text-[#5B8DFF] transition-colors"
           >
             <LeetCodeIcon className="w-4 h-4" />
             <span>LeetCode</span>
@@ -108,7 +110,7 @@ export default function ContactSection() {
             href="https://drive.google.com/file/d/15dmF8ILRUQKQm7NBvosj_QlJHCEoK0K-/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 hover:text-amber-400 transition-colors"
+            className="inline-flex items-center gap-2 hover:text-[#5B8DFF] transition-colors"
           >
             <FileText className="w-4 h-4" />
             <span>Resume</span>

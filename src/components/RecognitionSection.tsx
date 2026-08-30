@@ -8,11 +8,11 @@ export default function RecognitionSection() {
       id="recognition"
       className="py-16 sm:py-20 border-b border-white/[0.08]"
     >
-      <SectionHeading icon={Trophy} title="Honors & Recognition" />
+      <SectionHeading  title="Honors & Recognition" />
 
-      <div className={`p-8 ${glassCardBase} hover:border-amber-500/40 flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-md shadow-black/40`}>
+      <div className={`p-8 ${glassCardBase} hover:border-[#5B8DFF]/40 flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-md shadow-black/40`}>
         <div className="flex items-start gap-5">
-          <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 shadow-inner">
+          <div className="w-14 h-14 rounded-2xl bg-[#5B8DFF]/10 border border-[#5B8DFF]/30 flex items-center justify-center text-[#5B8DFF] shrink-0 shadow-inner">
             <Award className="w-7 h-7" />
           </div>
 
@@ -21,7 +21,7 @@ export default function RecognitionSection() {
               <span className="text-lg sm:text-xl font-bold text-white">
                 Winner
               </span>
-              <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/25 font-semibold shadow-[inset_0_1px_0_0_rgba(251,191,36,0.15)]">
+              <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-[#5B8DFF]/10 text-[#5B8DFF] border border-[#5B8DFF]/25 font-semibold shadow-[inset_0_1px_0_0_rgba(91,141,255,0.15)]">
                 1st Place
               </span>
             </div>

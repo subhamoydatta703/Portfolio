@@ -173,7 +173,7 @@ export default function Dock() {
               <span className="relative z-10">
                 <Icon
                   className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-colors ${
-                    isActive ? "text-amber-400" : "text-zinc-400"
+                    isActive ? "text-[#5B8DFF]" : "text-zinc-400"
                   }`}
                 />
               </span>
@@ -220,7 +220,7 @@ export default function Dock() {
           href="https://drive.google.com/file/d/15dmF8ILRUQKQm7NBvosj_QlJHCEoK0K-/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
-          className="p-2 sm:p-2.5 rounded-full text-zinc-400 hover:text-amber-400 hover:bg-white/[0.05] transition-colors shrink-0"
+          className="p-2 sm:p-2.5 rounded-full text-zinc-400 hover:text-[#5B8DFF] hover:bg-white/[0.05] transition-colors shrink-0"
           title="Resume"
           aria-label="Resume"
         >

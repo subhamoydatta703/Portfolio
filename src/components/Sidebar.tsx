@@ -78,7 +78,7 @@ export default function Sidebar() {
         <h1 className="text-4xl lg:text-5xl font-bold tracking-tight text-white">
           <a href="#">Subhamoy Datta</a>
         </h1>
-        <h2 className="mt-3 text-lg lg:text-xl font-medium tracking-tight text-[#b45309]">
+        <h2 className="mt-3 text-lg lg:text-xl font-medium tracking-tight text-[#5B8DFF]">
           GenAI Backend Developer
         </h2>
         <p className="mt-4 max-w-xs text-sm leading-normal text-white/55">
@@ -91,7 +91,7 @@ export default function Sidebar() {
             href="https://drive.google.com/file/d/15dmF8ILRUQKQm7NBvosj_QlJHCEoK0K-/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-[#b45309] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#92400e] transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#5B8DFF] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#4677EE] transition-colors"
           >
             <FileText className="w-3.5 h-3.5" />
             Resume
@@ -112,7 +112,7 @@ export default function Sidebar() {
                   >
                     <span
                       className={`mr-3 font-mono text-[11px] ${
-                        isActive ? "text-[#b45309]" : "text-white/20 group-hover:text-[#b45309]"
+                        isActive ? "text-[#5B8DFF]" : "text-white/20 group-hover:text-[#5B8DFF]"
                       }`}
                     >
                       {item.num}.
@@ -120,7 +120,7 @@ export default function Sidebar() {
                     <span className="relative">
                       {item.name}
                       {isActive && (
-                        <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#b45309]" />
+                        <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#5B8DFF]" />
                       )}
                     </span>
                   </button>
@@ -138,7 +138,7 @@ export default function Sidebar() {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-white/40 hover:text-[#b45309] transition-colors"
+              className="block text-white/40 hover:text-[#5B8DFF] transition-colors"
               aria-label={`${social.name} (opens in a new tab)`}
             >
               <social.icon className="w-5 h-5" />
