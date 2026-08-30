@@ -80,13 +80,17 @@ export default function SkillsSection() {
   return (
     <section
       id="skills"
+      aria-labelledby="skills-heading"
       className="py-16 sm:py-20 border-b border-white/[0.08]"
     >
       <div className="flex items-center gap-3 mb-8">
         <div className="p-2 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500">
           <Code2 className="w-5 h-5" />
         </div>
-        <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+        <h2
+          id="skills-heading"
+          className="text-2xl sm:text-3xl font-bold text-white tracking-tight"
+        >
           Technical Stack &amp; Architecture
         </h2>
       </div>

@@ -65,6 +65,11 @@ Make sure you have Node.js (v18+) and npm installed.
 * **About Scope:** Translucent glassmorphism tech stack highlighting technical acumen across front-end rendering engines and backend API design.
 * **Socials/Contact Action:** Seamless formless CTA directing organic network reach to Github, LinkedIn, and Email copy-clip implementations.
 
+## Quality & Accessibility
+
+* **Deduplicated tech stack:** The "Technical Stack & Architecture" section renders each skill exactly once — no marquee/carousel duplication leaking into source view or the accessibility tree. A regression was historically caused by marquee tracks doubling the tech list into readable DOM.
+* **Enforced on every build:** `npm run check:skills` (`scripts/check-skills-dedupe.mjs`) verifies every skill is unique, all categories are non-empty, and no marquee duplication pattern exists under `src/`. It runs automatically via `prebuild`, so a regression will fail `next build`.
+
 ## License & Copyright
 
 All structural and design elements created expressly for this repository unless otherwise noted.  

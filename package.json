@@ -7,9 +7,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "prebuild": "npm run check:skills",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check:skills": "node scripts/check-skills-dedupe.mjs"
   },
   "dependencies": {
     "@studio-freight/react-lenis": "^0.0.47",
