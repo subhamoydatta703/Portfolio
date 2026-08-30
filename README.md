@@ -3,17 +3,9 @@
 
 > **Live Preview:** [subhamoydatta.com](https://subhamoydattaportfolio.vercel.app/)
 
-A cinematic, high-performance portfolio website built with modern web technologies. Designed to provide a flawless "weightless DOM" scrollytelling experience, capturing the essence of deep-space aesthetics without utilizing costly WebGL/3D libraries. It combines cutting-edge React paradigms, powerful generic CSS utility systems, and Framer Motion's robust API.
+Personal portfolio and resume site. I'm a GenAI backend developer, and this site covers the systems I work on — RAG pipelines, LLM-powered backend architectures, and agent orchestration — plus the two npm packages I build and maintain (`rexa-agent`, `@subhamoy/somoy`).
 
-## Features 
-
-* **Cinematic Scrollytelling:** Leverages Lenis for butter-smooth scroll hijacking and Framer Motion for scroll-linked animations. 
-* **High-Performance Architecture:** Purely DOM-based animations, achieving blazing fast metrics with zero 3D dependencies constraint. 
-* **Dynamic Aesthetics:** Deep-space style visual language complete with a static grain overlay, neon accents, and responsive hover-glow sections. 
-* **Fully Responsive:** Painstakingly optimized to deliver 60fps on both ultra-wide monitors and memory-constrained mobile devices. 
-* **Type-Safe:** Written and strictly configured in 100% TypeScript. 
-
-## Technology Stack 
+## Stack 
 
 | Category         | Technology                 |
 | ---------------- | -------------------------- |
@@ -57,6 +49,7 @@ Make sure you have Node.js (v18+) and npm installed.
 * `npm run start`: Start the production server based on the built files.
 * `npm run typecheck`: Run TypeScript compiler to check for static typing errors.
 * `npm run lint`: Run Next ESLint.
+* `npm run check:skills`: Verify the skills section renders each skill exactly once (runs automatically before `build`).
 
 ## Designing Philosophy & Layout Sections 
 

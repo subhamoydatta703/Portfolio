@@ -1,7 +1,7 @@
-import React from "react";
 import Image from "next/image";
 import { FileText, ArrowUpRight, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon, XIcon, LeetCodeIcon } from "./Icons";
+import { ghostButtonClass, packageLinkClass } from "../lib/classes";
 
 export default function Hero() {
   return (
@@ -11,7 +11,6 @@ export default function Hero() {
     >
       <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-8 mb-10">
         <div className="space-y-4">
-          {/* Status Badge - High-Performance Translucent Glass */}
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-white/[0.1] bg-[#121215]/90 bg-gradient-to-b from-white/[0.04] to-transparent shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] text-xs font-mono text-zinc-300 shadow-sm">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
@@ -41,7 +40,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Main Bio */}
       <p className="text-zinc-300 text-base sm:text-lg leading-relaxed max-w-3xl mb-10">
         Building and deploying production AI systems: RAG pipelines, LLM-powered
         backends, and agent orchestration. Open-source author/maintainer of two
@@ -50,7 +48,7 @@ export default function Hero() {
           href="https://npmjs.com/package/rexa-agent"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-mono text-sm px-2 py-0.5 rounded-md bg-[#18181b]/80 text-amber-400 border border-white/[0.1] hover:border-amber-500 hover:bg-[#18181b] transition-all inline-block shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+          className={packageLinkClass}
         >
           rexa-agent
         </a>{" "}
@@ -59,14 +57,13 @@ export default function Hero() {
           href="https://npmjs.com/package/@subhamoy/somoy"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-mono text-sm px-2 py-0.5 rounded-md bg-[#18181b]/80 text-amber-400 border border-white/[0.1] hover:border-amber-500 hover:bg-[#18181b] transition-all inline-block shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+          className={packageLinkClass}
         >
           @subhamoy/somoy
         </a>
         , both MIT-licensed.
       </p>
 
-      {/* Action Buttons with High-Performance Glass Styling */}
       <div className="flex flex-wrap items-center gap-3.5">
         <a
           href="https://drive.google.com/file/d/15dmF8ILRUQKQm7NBvosj_QlJHCEoK0K-/view?usp=sharing"
@@ -83,7 +80,7 @@ export default function Hero() {
           href="https://github.com/subhamoydatta703"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-3 rounded-xl border border-white/[0.08] bg-[#121215]/85 bg-gradient-to-b from-white/[0.03] to-transparent hover:bg-[#18181b] hover:border-white/[0.18] text-zinc-300 hover:text-white text-sm font-medium transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+          className={ghostButtonClass}
         >
           <GithubIcon className="w-4 h-4" />
           <span>GitHub</span>
@@ -93,7 +90,7 @@ export default function Hero() {
           href="https://www.linkedin.com/in/subhamoy-datta"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-3 rounded-xl border border-white/[0.08] bg-[#121215]/85 bg-gradient-to-b from-white/[0.03] to-transparent hover:bg-[#18181b] hover:border-white/[0.18] text-zinc-300 hover:text-white text-sm font-medium transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+          className={ghostButtonClass}
         >
           <LinkedinIcon className="w-4 h-4" />
           <span>LinkedIn</span>
@@ -103,7 +100,7 @@ export default function Hero() {
           href="https://x.com/codebysubhamoy"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-3 rounded-xl border border-white/[0.08] bg-[#121215]/85 bg-gradient-to-b from-white/[0.03] to-transparent hover:bg-[#18181b] hover:border-white/[0.18] text-zinc-300 hover:text-white text-sm font-medium transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+          className={ghostButtonClass}
         >
           <XIcon className="w-4 h-4" />
           <span>Twitter</span>
@@ -113,7 +110,7 @@ export default function Hero() {
           href="https://leetcode.com/u/26W5VCTCTA"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-3 rounded-xl border border-white/[0.08] bg-[#121215]/85 bg-gradient-to-b from-white/[0.03] to-transparent hover:bg-[#18181b] hover:border-white/[0.18] text-zinc-300 hover:text-white text-sm font-medium transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+          className={ghostButtonClass}
         >
           <LeetCodeIcon className="w-4 h-4" />
           <span>LeetCode</span>
@@ -121,7 +118,7 @@ export default function Hero() {
 
         <a
           href="mailto:subhamoydatta703@gmail.com"
-          className="inline-flex items-center gap-2 px-4 py-3 rounded-xl border border-white/[0.08] bg-[#121215]/85 bg-gradient-to-b from-white/[0.03] to-transparent hover:bg-[#18181b] hover:border-white/[0.18] text-zinc-300 hover:text-white text-sm font-medium transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+          className={ghostButtonClass}
         >
           <Mail className="w-4 h-4" />
           <span>Contact</span>

@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
+import type { ComponentType } from "react";
 import {
   FolderGit2,
   ArrowUpRight,
@@ -28,6 +29,8 @@ import {
   GithubIcon,
   NpmIcon,
 } from "./Icons";
+import SectionHeading from "./SectionHeading";
+import { projectCardTail, techPillClass } from "../lib/classes";
 
 interface Project {
   title: string;
@@ -36,12 +39,12 @@ interface Project {
   badge?: string;
   isFeatured?: boolean;
   installCmd?: string;
-  icon: React.ComponentType<{ className?: string }>;
-  tech: { name: string; icon: React.ComponentType<{ className?: string }> }[];
+  icon: ComponentType<{ className?: string }>;
+  tech: { name: string; icon: ComponentType<{ className?: string }> }[];
   links: {
     label: string;
     href: string;
-    icon?: React.ComponentType<{ className?: string }>;
+    icon?: ComponentType<{ className?: string }>;
   }[];
 }
 
@@ -201,20 +204,15 @@ export default function ProjectsSection() {
       id="projects"
       className="py-16 sm:py-20 border-b border-white/[0.08]"
     >
-      <div className="flex items-center justify-between mb-8">
-        <div className="flex items-center gap-3">
-          <div className="p-2 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500">
-            <FolderGit2 className="w-5 h-5" />
-          </div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-            Featured Projects
-          </h2>
-        </div>
-
-        <span className="text-xs font-mono text-zinc-500 hidden sm:inline-block">
-          Open Source &amp; Systems
-        </span>
-      </div>
+      <SectionHeading
+        icon={FolderGit2}
+        title="Featured Projects"
+        trailing={
+          <span className="text-xs font-mono text-zinc-500 hidden sm:inline-block">
+            Open Source &amp; Systems
+          </span>
+        }
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((p) => {
@@ -226,55 +224,52 @@ export default function ProjectsSection() {
                 p.isFeatured
                   ? "border-white/[0.12] bg-[#121215]/90 bg-gradient-to-b from-white/[0.04] to-transparent shadow-xl shadow-black/50"
                   : "border-white/[0.08] bg-[#121215]/85 bg-gradient-to-b from-white/[0.03] to-transparent shadow-md shadow-black/40"
-              } shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] hover:border-white/[0.22] hover:bg-[#18181b]/95 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-black/70 transition-all duration-200 ease-out flex flex-col justify-between`}
+              } ${projectCardTail}`}
             >
               <div>
-                {/* Header */}
-<div className="flex flex-col sm:flex-row sm:items-start items-start justify-between gap-3 sm:gap-4 mb-4">
-  <div className="flex items-center gap-3.5 min-w-0">
-    <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-amber-400 shrink-0 shadow-sm shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
-      <Icon className="w-6 h-6" />
-    </div>
-    <div className="min-w-0">
-      <div className="flex items-center gap-2">
-        <h3 className="text-xl font-bold text-white tracking-tight truncate">
-          {p.title}
-        </h3>
-        {p.isFeatured && (
-          <Sparkles className="w-3.5 h-3.5 text-amber-400 fill-amber-400 shrink-0" />
-        )}
-      </div>
-      <p className="text-xs font-mono text-zinc-400 truncate">
-        {p.subtitle}
-      </p>
-    </div>
-  </div>
+                <div className="flex flex-col sm:flex-row sm:items-start items-start justify-between gap-3 sm:gap-4 mb-4">
+                  <div className="flex items-center gap-3.5 min-w-0">
+                    <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-amber-400 shrink-0 shadow-sm shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2">
+                        <h3 className="text-xl font-bold text-white tracking-tight truncate">
+                          {p.title}
+                        </h3>
+                        {p.isFeatured && (
+                          <Sparkles className="w-3.5 h-3.5 text-amber-400 fill-amber-400 shrink-0" />
+                        )}
+                      </div>
+                      <p className="text-xs font-mono text-zinc-400 truncate">
+                        {p.subtitle}
+                      </p>
+                    </div>
+                  </div>
 
-  {p.badge && (
-    <span className="text-xs font-mono px-2.5 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-400 font-medium shadow-[inset_0_1px_0_0_rgba(251,191,36,0.15)] self-start whitespace-nowrap max-w-full sm:shrink-0">
-      {p.badge}
-    </span>
-  )}
-</div>                {/* Quick copy command */}
+                  {p.badge && (
+                    <span className="text-xs font-mono px-2.5 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-400 font-medium shadow-[inset_0_1px_0_0_rgba(251,191,36,0.15)] self-start whitespace-nowrap max-w-full sm:shrink-0">
+                      {p.badge}
+                    </span>
+                  )}
+                </div>
                 {p.installCmd && (
                   <div className="mb-5">
                     <CopyButton text={p.installCmd} />
                   </div>
                 )}
 
-                {/* Description */}
                 <p className="text-sm text-zinc-300 leading-relaxed mb-6">
                   {p.description}
                 </p>
               </div>
 
               <div>
-                {/* Tech Pills */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {p.tech.map((t) => (
                     <span
                       key={t.name}
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md border border-white/[0.08] bg-[#09090b]/70 text-xs font-mono text-zinc-300 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]"
+                      className={techPillClass}
                     >
                       <t.icon className="w-3.5 h-3.5 text-zinc-400" />
                       <span>{t.name}</span>
@@ -282,7 +277,6 @@ export default function ProjectsSection() {
                   ))}
                 </div>
 
-                {/* Action Links */}
                 <div className="flex items-center gap-4 pt-3 border-t border-white/[0.08]">
                   {p.links.map((link) => {
                     const LinkIcon = link.icon;

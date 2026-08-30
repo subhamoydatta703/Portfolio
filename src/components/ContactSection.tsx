@@ -1,7 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { Mail, Copy, Check, ArrowUpRight, FileText } from "lucide-react";
+import SectionHeading from "./SectionHeading";
+import { glassCardBase } from "../lib/classes";
 import { GithubIcon, LinkedinIcon, XIcon, LeetCodeIcon } from "./Icons";
 
 export default function ContactSection() {
@@ -23,23 +25,14 @@ export default function ContactSection() {
       id="contact"
       className="py-16 sm:py-20"
     >
-      <div className="flex items-center gap-3 mb-8">
-        <div className="p-2 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500">
-          <Mail className="w-5 h-5" />
-        </div>
-        <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-          Get In Touch
-        </h2>
-      </div>
+      <SectionHeading icon={Mail} title="Get In Touch" />
 
-      {/* Main Contact Container - 120 FPS High-Performance Translucent Glass & Hover Lift */}
-      <div className="p-8 sm:p-10 rounded-2xl border border-white/[0.08] bg-[#121215]/85 bg-gradient-to-b from-white/[0.03] to-transparent shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] hover:border-white/[0.2] hover:bg-[#18181b]/95 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-black/70 transition-all duration-200 ease-out space-y-8 shadow-xl shadow-black/40">
+      <div className={`p-8 sm:p-10 ${glassCardBase} hover:border-white/[0.2] space-y-8 shadow-xl shadow-black/40`}>
         <p className="text-base text-zinc-300 max-w-2xl leading-relaxed">
           Always open to discussing production AI architectures, backend systems,
           open-source collaborations, and engineering opportunities.
         </p>
 
-        {/* Email Copy + Mailto Box */}
         <div className="flex flex-wrap items-center gap-4">
           <a
             href={`mailto:${email}`}
@@ -70,7 +63,6 @@ export default function ContactSection() {
           </button>
         </div>
 
-        {/* Social Links Row */}
         <div className="pt-6 border-t border-white/[0.08] flex flex-wrap items-center gap-6 text-sm font-medium text-zinc-400">
           <a
             href="https://github.com/subhamoydatta703"

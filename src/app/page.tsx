@@ -9,7 +9,7 @@ import Dock from "@/components/Dock";
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-[#09090b] text-zinc-300 selection:bg-amber-500/20 selection:text-white">
-      {/* Absolute Tile-Cached Background Grid - 0 Scroll Repaints */}
+      {/* Absolute Tile-Cached Background Grid */}
       <div
         className="pointer-events-none absolute inset-0 z-0 opacity-40"
         style={{

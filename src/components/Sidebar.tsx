@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FileText } from "lucide-react";
 import {
   GithubIcon,
@@ -86,7 +86,6 @@ export default function Sidebar() {
           LLM-powered backends, and agent orchestration. B.Tech CSE (AI &amp; ML) student.
         </p>
 
-        {/* Resume Button */}
         <div className="mt-6">
           <a
             href="https://drive.google.com/file/d/15dmF8ILRUQKQm7NBvosj_QlJHCEoK0K-/view?usp=sharing"
@@ -99,7 +98,6 @@ export default function Sidebar() {
           </a>
         </div>
 
-        {/* Navigation */}
         <nav className="hidden lg:block mt-16" aria-label="In-page jump links">
           <ul className="w-max space-y-4">
             {navItems.map((item) => {
@@ -133,7 +131,6 @@ export default function Sidebar() {
         </nav>
       </div>
 
-      {/* Social Links Row */}
       <ul className="mt-8 flex items-center gap-5" aria-label="Social media">
         {socials.map((social) => (
           <li key={social.name}>

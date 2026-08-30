@@ -1,21 +1,7 @@
 #!/usr/bin/env node
 /**
- * check-skills-dedupe.mjs
- *
- * Guards the "Technical Stack & Architecture" section against a historical
- * regression where a marquee/carousel rendered the same ~24 tech pills four
- * times into the DOM and the accessibility tree ("Technologies & Tools" list
- * repeated in a row).
- *
- * What this script verifies:
- *  1. `src/components/SkillsSection.tsx` renders every skill exactly once
- *     (no duplicate `name`s, no empty categories, count === distinct count).
- *  2. No file under `src/` reintroduces the marquee duplication pattern (a
- *     marquee animation track that doubles an array without hiding the
- *     duplicate copy via `aria-hidden`).
- *
- * Exit code 0 = pass, 1 = fail. Wired into `npm run check:skills` and
- * `npm run prebuild` so a regression fails `next build`.
+ * Pre-build guard for the skills section. Fails the build if any skill is
+ * duplicated or if the marquee duplication pattern is reintroduced.
  */
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative, dirname, resolve } from "node:path";
