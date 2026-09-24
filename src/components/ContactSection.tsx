@@ -107,7 +107,7 @@ export default function ContactSection() {
           </a>
 
           <a
-            href="https://drive.google.com/file/d/15dmF8ILRUQKQm7NBvosj_QlJHCEoK0K-/view?usp=sharing"
+            href="https://drive.google.com/file/d/1kjRM4jI2-1_ZvaMQd8JaH1hnne7U_4o2/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 hover:text-[#5B8DFF] transition-colors"
