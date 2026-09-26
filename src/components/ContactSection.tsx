@@ -29,10 +29,7 @@ export default function ContactSection() {
 
       <div className={`p-8 sm:p-10 ${glassCardBase} hover:border-white/[0.2] space-y-8 shadow-xl shadow-black/40`}>
         <p className="text-base text-zinc-300 max-w-2xl leading-relaxed">
-          Currently looking for an AI/ML or backend engineering internship to
-          build on the work I've shipped so far. I'm always open to
-          collaborating on agent and RAG systems — if you're building at a
-          product company in the space, I'd love to talk.
+          Currently looking for a GenAI, agentic systems, or full-stack engineering internship to build on the work I've shipped so far. I'm always open to collaborating on agent, RAG, and full-stack systems — if you're building at a product company in the space, I'd love to talk.
         </p>
 
         <div className="flex flex-wrap items-center gap-4">
@@ -119,7 +116,7 @@ export default function ContactSection() {
       </div>
 
       <div className="pt-10 pb-20 text-center text-xs text-zinc-500 font-mono">
-        &copy; {new Date().getFullYear()} Subhamoy Datta · GenAI Backend Developer
+        &copy; {new Date().getFullYear()} Subhamoy Datta · GenAI &amp; Agentic Systems Engineer
       </div>
     </footer>
   );

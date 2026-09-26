@@ -15,9 +15,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Subhamoy Datta — GenAI Backend Developer",
+  title: "Subhamoy Datta — GenAI & Agentic Systems Engineer",
   description:
-    "Portfolio of Subhamoy Datta. GenAI Backend Developer building RAG pipelines, AI agents, and LLM-powered APIs. Open-source author of rexa-agent and @subhamoy/somoy. B.Tech CSE (AI & ML).",
+    "Portfolio of Subhamoy Datta. GenAI & Agentic Systems Engineer building autonomous agent harnesses, RAG pipelines, and full-stack applications. Open-source author of rexa-agent and @subhamoy/somoy. B.Tech CSE (AI & ML).",
   icons: {
     icon: "/favicon.svg",
   },

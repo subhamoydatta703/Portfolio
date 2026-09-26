@@ -79,7 +79,7 @@ export default function Sidebar() {
           <a href="#">Subhamoy Datta</a>
         </h1>
         <h2 className="mt-3 text-lg lg:text-xl font-medium tracking-tight text-[#5B8DFF]">
-          GenAI Backend Developer
+          GenAI &amp; Agentic Systems Engineer
         </h2>
         <p className="mt-4 max-w-xs text-sm leading-normal text-white/55">
           Building and deploying production AI systems: RAG pipelines,

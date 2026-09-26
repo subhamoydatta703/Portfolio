@@ -31,6 +31,10 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
+    label: "Frontend",
+    skills: ["React", "Tailwind CSS"],
+  },
+  {
     label: "Backend",
     skills: [
       "Bun & Node.js",

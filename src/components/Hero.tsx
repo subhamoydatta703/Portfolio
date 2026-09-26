@@ -23,7 +23,10 @@ export default function Hero() {
               Subhamoy Datta
             </h1>
             <p className="mt-1 text-lg sm:text-xl font-medium text-[#5B8DFF]">
-              GenAI Backend Engineer
+              GenAI &amp; Agentic Systems Engineer
+            </p>
+            <p className="mt-3 text-base sm:text-lg text-zinc-400 leading-relaxed max-w-2xl">
+              Building autonomous agent harnesses and orchestration with guardrails, RAG pipelines, and shipping and deploying full-stack applications end to end.
             </p>
           </div>
         </div>
@@ -39,15 +42,6 @@ export default function Hero() {
             sizes="(max-width: 768px) 80px, 96px"
           />
         </div>
-      </div>
-      {/* Main Hero Content */}
-      <div className="max-w-5xl">
-        <h2 className="text-xl sm:text-2xl font-medium tracking-tight text-white">
-          Backend systems, AI agents, and the infrastructure that ties them together.
-        </h2>
-        <p className="mt-3 text-lg text-zinc-400 leading-relaxed max-w-xl">
-          CS (AI & ML) student who builds GenAI backend systems and ships them — agent orchestration, RAG pipelines, reliable infrastructure.
-        </p>
       </div>
       {/* Actions */}
       <div className="flex flex-wrap items-center gap-3.5 mt-8">

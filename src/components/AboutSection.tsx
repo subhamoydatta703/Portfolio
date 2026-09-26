@@ -12,9 +12,9 @@ export default function AboutSection() {
 
       <div className="space-y-3 text-zinc-300 leading-relaxed text-sm sm:text-base mb-10">
         <p>
-          Hi, I'm Subhamoy — I build production-style AI systems: RAG
-          pipelines, LLM-powered backend architectures, and agent
-          orchestration. I've published two MIT-licensed npm packages —{" "}
+          Hi, I'm Subhamoy — I build agent orchestration layers, agent
+          harnesses, and RAG pipelines, and I build and ship full-stack AI
+          products end to end. I've published two MIT-licensed npm packages —{" "}
           <span className="font-mono text-[#5B8DFF] font-medium">rexa-agent</span>{" "}
           (a Docker-sandboxed CLI coding agent) and{" "}
           <span className="font-mono text-[#5B8DFF] font-medium">
@@ -72,15 +72,15 @@ export default function AboutSection() {
             <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-[#5B8DFF] group-hover:border-[#5B8DFF]/40 transition-colors shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
               <Server className="w-4 h-4" />
             </div>
-            <span>GenAI Backend Dev</span>
+            <span>GenAI &amp; Full-Stack Dev</span>
           </div>
           <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed group-hover:text-zinc-300 transition-colors">
-            Designing production LLM-powered backends: multi-modal ingestion
+            Designing production LLM-powered systems: multi-modal ingestion
             pipelines across PDF, URL, YouTube, and raw text, pgvector for
             semantic similarity search, and asynchronous Redis/BullMQ
-            embedding pipelines. Backing it with Redis-based rate limiting,
-            high-throughput result caching, and Express/Node APIs built to
-            hold up under real load.
+            embedding pipelines. Shipped end to end with Redis-based rate limiting,
+            high-throughput result caching, Express/Node APIs, and React/Tailwind
+            frontends built to hold up under real load.
           </p>
         </div>
 

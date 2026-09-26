@@ -123,6 +123,63 @@ const projects: Project[] = [
       },
     ],
   },
+  {
+    title: "Resumark",
+    subtitle: "AI Resume Analysis Platform",
+    badge: "Full-Stack AI Platform",
+    isFeatured: false,
+    description:
+      "Production-deployed AI resume analysis platform providing automated feedback and scoring via Gemini API. Built with an asynchronous Redis/BullMQ processing queue, PostgreSQL with Prisma ORM, AWS S3 asset storage, and Clerk authentication — serving as the architectural boilerplate origin for DocSense.",
+    tech: [
+      "TypeScript",
+      "Bun",
+      "Express",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "BullMQ",
+      "AWS S3",
+      "Clerk",
+      "Gemini API",
+    ],
+    links: [
+      {
+        label: "Live Demo",
+        href: "https://resumark-webapp.vercel.app/",
+      },
+      {
+        label: "GitHub Repo",
+        href: "https://github.com/subhamoydatta703/Resumark",
+      },
+    ],
+  },
+  {
+    title: "ShelfLife",
+    subtitle: "Household Inventory Tracker",
+    badge: "Full-Stack Web App",
+    isFeatured: false,
+    description:
+      "Household inventory management application designed to track pantry items, monitor expiration timelines, and reduce food waste. Features secure JWT authentication, RESTful APIs built with Node.js and Express, and MongoDB/Mongoose data models deployed across Vercel and Render.",
+    tech: [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "Vercel",
+      "Render",
+    ],
+    links: [
+      {
+        label: "Live Demo",
+        href: "https://shelflifwebapp.vercel.app/",
+      },
+      {
+        label: "GitHub Repo",
+        href: "https://github.com/subhamoydatta703/Shelf-Life",
+      },
+    ],
+  },
 ];
 
 function CopyButton({ text }: { text: string }) {
