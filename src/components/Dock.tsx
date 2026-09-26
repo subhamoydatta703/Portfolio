@@ -217,7 +217,7 @@ export default function Dock() {
         </a>
 
         <a
-          href="https://drive.google.com/file/d/15dmF8ILRUQKQm7NBvosj_QlJHCEoK0K-/view?usp=sharing"
+          href="https://drive.google.com/file/d/19lfm2kUQvaWSybn_xV-_4e-STtAKrv3s/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="p-2 sm:p-2.5 rounded-full text-zinc-400 hover:text-[#5B8DFF] hover:bg-white/[0.05] transition-colors shrink-0"

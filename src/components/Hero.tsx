@@ -52,7 +52,7 @@ export default function Hero() {
       {/* Actions */}
       <div className="flex flex-wrap items-center gap-3.5 mt-8">
         <a
-          href="https://drive.google.com/file/d/1kjRM4jI2-1_ZvaMQd8JaH1hnne7U_4o2/view?usp=sharing"
+          href="https://drive.google.com/file/d/19lfm2kUQvaWSybn_xV-_4e-STtAKrv3s/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-white font-medium text-sm border border-white/[0.12] bg-[#5B8DFF] hover:bg-[#4677EE] transition-colors"
