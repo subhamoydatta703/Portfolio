@@ -1,4 +1,4 @@
-import { Trophy, Award } from "lucide-react";
+import { Award } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import { glassCardBase } from "../lib/classes";
 

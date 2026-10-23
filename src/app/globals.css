@@ -1,37 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  --color-accent: #d97706;
-  --color-accent-hover: #b45309;
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-jetbrains-mono);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: "Courier New", monospace;
+  --color-accent: #65714d;
 }
 
 @layer base {
-  html {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    overscroll-behavior-y: none;
-  }
-
-  html::-webkit-scrollbar,
-  body::-webkit-scrollbar {
-    display: none;
-  }
-
+  html { color-scheme: light; scroll-padding-top: 24px; }
   body {
-    background-color: #09090b;
-    color: #d4d4d8;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    margin: 0;
+    background: #fcfcfa;
+    color: #262923;
+    font-family: Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    overscroll-behavior-y: none;
   }
+  ::selection { background: #dce4cc; color: #262923; }
+}
 
-  ::selection {
-    background: rgba(217, 119, 6, 0.25);
-    color: #ffffff;
-  }
+.folio { min-height: 100vh; --text-muted: #68725e; }
+.folio main:focus { outline: none; }
+.folio .skip-link { position: fixed; left: 16px; top: 12px; z-index: 50; transform: translateY(-180%); padding: 10px 16px; border-radius: 6px; background: #262923; color: #fff; font-size: 14px; }
+.folio .skip-link:focus { transform: translateY(0); }
+.folio .link-arrow { display: inline-block; width: 13px; height: 13px; flex-shrink: 0; vertical-align: -.15em; stroke-width: 1.7; }
+.folio .button { align-items: center; }
+.folio .expand-icon { width: 18px; height: 18px; stroke-width: 1.6; }
+
+@media(prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
 }

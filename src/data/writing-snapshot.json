@@ -1,0 +1,39 @@
+[
+  {
+    "id": 4787514,
+    "title": "What Giving Interviews Taught Me Beyond Just Getting an Internship",
+    "url": "https://dev.to/itssubhamoy/what-giving-interviews-taught-me-beyond-just-getting-an-internship-88",
+    "publishedAt": "2026-10-02T13:08:44Z",
+    "readingMinutes": 5,
+    "tags": [
+      "internship",
+      "interview",
+      "career"
+    ]
+  },
+  {
+    "id": 4679104,
+    "title": "How I Implemented Memory in my AI Agent REXA",
+    "url": "https://dev.to/itssubhamoy/how-i-implemented-memory-in-my-ai-agent-rexa-4dbh",
+    "publishedAt": "2026-09-17T18:41:35Z",
+    "readingMinutes": 5,
+    "tags": [
+      "ai",
+      "agents",
+      "agentskills",
+      "buildinpublic"
+    ]
+  },
+  {
+    "id": 4583612,
+    "title": "Why LLMs Should Never Touch Money Directly: Building an AI Payment Recovery Agent Solo",
+    "url": "https://dev.to/itssubhamoy/why-llms-should-never-touch-money-directly-building-an-ai-payment-recovery-agent-solo-493o",
+    "publishedAt": "2026-09-05T17:33:03Z",
+    "readingMinutes": 11,
+    "tags": [
+      "ai",
+      "agents",
+      "hackathon"
+    ]
+  }
+]

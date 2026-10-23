@@ -1,0 +1,37 @@
+﻿.folio .open-source { padding-top: 80px; }
+.folio .contribution-overview { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; align-items: start; margin-bottom: 36px; }
+.folio .contribution-intro { font-size: 27px; font-weight: 400; line-height: 1.5; letter-spacing: -.6px; margin: 0; }
+.folio .oss-totals { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 0; }
+.folio .oss-totals>div { display: flex; flex-direction: column-reverse; gap: 8px; }
+.folio .oss-totals>div+div { border-left: 1px solid #e0e3d8; padding-left: 24px; }
+.folio .oss-totals dt { color: var(--text-muted); font-size: 12px; }
+.folio .oss-totals dd { margin: 0; font-size: 30px; letter-spacing: -.7px; font-weight: 400; line-height: 1.2; }
+.folio .oss-scope { color: var(--text-muted); font-size: 12px; line-height: 1.7; margin: 16px 0 0; }
+.folio .github-calendar { border-top: 1px solid #e0e3d8; padding: 24px 0 0; margin: 0; }
+.folio .github-calendar figcaption { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 20px; font-size: 14px; }
+.folio .github-calendar figcaption>span+span { font-size: 12px; color: var(--text-muted); }
+.folio .github-chart-scroll { overflow-x: auto; }
+.folio .github-chart-scroll:focus-visible { outline: 2px solid #65714d; outline-offset: 3px; }
+.folio .github-chart { display: block; width: 100%; min-width: 650px; height: auto; }
+.folio .github-axis { fill: var(--text-muted); font: 10px Arial, Helvetica, sans-serif; }
+.folio .level-0 { fill: #edf0e7; background: #edf0e7; }
+.folio .level-1 { fill: #c5d7ad; background: #c5d7ad; }
+.folio .level-2 { fill: #96b27b; background: #96b27b; }
+.folio .level-3 { fill: #698b50; background: #698b50; }
+.folio .level-4 { fill: #405f30; background: #405f30; }
+.folio .github-cell:hover { stroke: #262923; stroke-width: 1; }
+.folio .github-calendar-footer { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 12px; color: var(--text-muted); font-size: 10px; }
+.folio .github-legend { display: flex; align-items: center; gap: 5px; }
+.folio .legend-cell { width: 11px; height: 11px; border-radius: 2px; }
+@media(max-width:800px) {
+  .folio .contribution-overview { gap: 32px; }
+  .folio .contribution-linebreak { display: none; }
+  .folio .oss-totals { gap: 16px; }
+  .folio .oss-totals>div+div { padding-left: 16px; }
+}
+@media(max-width:600px) {
+  .folio .open-source { padding-top: 56px; }
+  .folio .contribution-overview { grid-template-columns: minmax(0, 1fr); gap: 28px; margin-bottom: 28px; }
+  .folio .contribution-intro { font-size: 24px; }
+  .folio .github-calendar figcaption { flex-direction: column; align-items: flex-start; gap: 6px; }
+}

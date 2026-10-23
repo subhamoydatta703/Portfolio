@@ -1,25 +1,21 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "Subhamoy Datta — GenAI & Agentic Systems Engineer",
+  title: "Subhamoy Datta — Backend, GenAI & Agentic Systems",
   description:
-    "Portfolio of Subhamoy Datta. GenAI & Agentic Systems Engineer building autonomous agent harnesses, RAG pipelines, and full-stack applications. Open-source author of rexa-agent and @subhamoy/somoy. B.Tech CSE (AI & ML).",
+    "Subhamoy Datta builds and publishes agentic systems, develops RAG pipelines, and deploys LLM-powered backend systems. Explore projects, open-source contributions and technical skills.",
+  openGraph: {
+    title: "Subhamoy Datta — Backend, GenAI & Agentic Systems",
+    description: "Agent harnesses, orchestration, RAG pipelines and LLM-powered backend systems.",
+    type: "website",
+  },
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/favicon.svg?v=2", type: "image/svg+xml", sizes: "any" },
+      { url: "/favicon-32.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
   },
 };
 
@@ -29,10 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} dark`}>
-      <body className="font-sans antialiased bg-[#09090b] text-zinc-300 min-h-screen selection:bg-amber-500/20 selection:text-amber-200">
-        {children}
-      </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }

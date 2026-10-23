@@ -3,7 +3,7 @@
  * Pre-build guard for the skills section. Fails the build if any skill is
  * duplicated or if the marquee duplication pattern is reintroduced.
  *
- * Matches the current SkillsSection.tsx data shape:
+ * Checks the shared data rendered by SkillsSection.tsx:
  *   const skillCategories: SkillCategory[] = [
  *     { label: "AI & Agent", skills: ["Zod Schema I/O", "Loop Detection", ...] },
  *     ...
@@ -16,7 +16,7 @@ import { join, relative, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const skillsPath = join(root, "src", "components", "SkillsSection.tsx");
+const skillsPath = join(root, "src", "lib", "skills.ts");
 
 const FAILURES = [];
 const log = (msg) => console.log(msg);

@@ -1,0 +1,92 @@
+.folio .hero-portrait { max-width: 280px; }
+.folio .hero { padding-top: 80px; padding-bottom: 88px; }
+.folio .featured-grid,
+.folio .additional-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.folio .project { min-width: 0; display: flex; flex-direction: column; }
+.folio .project-image { height: auto; aspect-ratio: 4 / 3; flex-shrink: 0; }
+.folio .project-title { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.folio .project-title .kind { display: block; flex-basis: 100%; margin: 0; }
+.folio .project .tags { display: block; padding-bottom: 18px; }
+.folio .project-links { margin-top: auto; padding-top: 0; }
+.folio .more-projects-control { display: flex; justify-content: center; margin-top: 44px; }
+.folio .more-projects-button { display: inline-flex; align-items: center; gap: 28px; border: 1px solid #d5d8ce; border-radius: 99px; padding: 12px 22px; background: transparent; color: #262923; font: inherit; font-size: 13px; cursor: pointer; transition: background 180ms ease; }
+.folio .more-projects-button:hover { background: #eef0e8; }
+.folio .more-projects-button:focus-visible { outline: 2px solid #65714d; outline-offset: 5px; }
+.folio .expand-icon { font-size: 20px; line-height: 1; transition: transform 250ms ease; }
+.folio .expand-icon.is-open { transform: rotate(45deg); }
+.folio .projects-expansion { display: grid; grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows 440ms cubic-bezier(.22, 1, .36, 1), visibility 0s 440ms; }
+.folio .projects-expansion.is-open { grid-template-rows: 1fr; visibility: visible; transition: grid-template-rows 440ms cubic-bezier(.22, 1, .36, 1), visibility 0s; }
+.folio .expansion-clip { overflow: hidden; min-height: 0; }
+.folio .additional-grid { padding-top: 40px; padding-bottom: 8px; }
+.folio .extra-project { opacity: 0; transform: translateY(18px); transition: opacity 300ms ease, transform 360ms ease; }
+.folio .projects-expansion.is-open .extra-project { opacity: 1; transform: translateY(0); }
+.folio .projects-expansion:not(.is-open) .extra-project { transition-delay: 0ms !important; }
+.folio .skills { padding-top: 80px; padding-bottom: 0; }
+.folio .about { padding-top: 80px; padding-bottom: 80px; }
+@media (min-width: 601px) and (max-width: 1000px) {
+  .folio .featured-grid, .folio .additional-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 28px; }
+}
+@media (max-width: 800px) {
+  .folio .hero { padding-top: 64px; padding-bottom: 64px; }
+}
+@media (max-width: 600px) {
+  .folio .hero-portrait { max-width: 210px; }
+  .folio .featured-grid, .folio .additional-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .folio .skills { padding-top: 56px; padding-bottom: 0; }
+  .folio .about { padding-top: 56px; padding-bottom: 56px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .folio .projects-expansion, .folio .extra-project, .folio .expand-icon { transition: none !important; }
+}
+
+.folio .actions{flex-wrap:wrap;row-gap:16px}.folio #contact{scroll-margin-top:24px}
+.folio .footer { padding-top: 48px; }
+.folio .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.folio .contact-intro>p { max-width: 400px; color: var(--text-muted); font-size: 15px; line-height: 1.8; margin: 16px 0 24px; }
+.folio .contact-availability { display: flex; align-items: baseline; gap: 9px; font-size: 12px; color: #626b58; }
+.folio .contact-availability>span { width: 6px; height: 6px; border-radius: 50%; background: #73875a; flex: 0 0 6px; }
+.folio .contact-options { padding-top: 6px; }
+.folio .contact-primary { display: flex; align-items: center; flex-wrap: wrap; gap: 28px; margin-top: 22px; }
+.folio .contact-primary .button { min-width: 150px; justify-content: space-between; }
+.folio .contact-elsewhere { border-top: 1px solid #e0e3d8; margin-top: 30px; padding-top: 22px; }
+.folio .contact-elsewhere>div { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 14px; font-size: 13px; }
+.folio .screenshot-frame { display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 14px; background: #0b0b0b; }
+.folio .screenshot-frame img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+.folio .screenshot-docsense { background: #11110e; }
+.folio .screenshot-marin { background: #080b10; padding: 12px; }
+.folio .screenshot-resumark { background: #111110; }
+.folio .screenshot-shelflife { background: #0b1220; }
+.folio .screenshot-somoy { background: #1a1a1a; padding: 14px; border: 0; }
+.folio .screenshot-somoy img { background: transparent; }
+.folio .footer-bottom { margin-top: 44px; }
+.folio .skills-browser { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; align-items: start; }
+.folio .skill-categories { display: flex; flex-direction: column; gap: 4px; }
+.folio .skill-category { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; padding: 11px 14px; border: 0; border-radius: 6px; background: transparent; color: #62685c; text-align: left; font: inherit; font-size: 13px; cursor: pointer; }
+.folio .skill-category:hover { background: #f1f2ec; }
+.folio .skill-category.is-active { color: #262923; background: #e9eddf; }
+.folio .skill-category:focus-visible { outline: 2px solid #65714d; outline-offset: 3px; }
+.folio .skill-category-count { font: 10px monospace; color: #616a56; }
+.folio .skill-details { min-width: 0; border-left: 1px solid #e0e3d8; padding: 8px 0 16px 40px; }
+.folio .skill-detail-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 24px; }
+.folio .skill-detail-heading h3 { font-size: 23px; font-weight: 400; }
+.folio .skill-detail-heading>span { font-size: 11px; color: var(--text-muted); white-space: nowrap; }
+.folio .skill-items { display: flex; flex-wrap: wrap; gap: 12px; padding: 0; margin: 0; list-style: none; animation: skill-category-enter 180ms ease; }
+.folio .skill-items li { max-width: 100%; overflow-wrap: anywhere; border: 1px solid #e0e3d8; border-radius: 5px; padding: 9px 12px; color: #535c49; font-size: 13px; line-height: 1.6; }
+@keyframes skill-category-enter { from { opacity: .3; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@media(max-width:800px) { .folio .skills-browser { grid-template-columns: 180px minmax(0, 1fr); gap: 24px; } .folio .skill-details { padding-left: 24px; } }
+@media(max-width:600px) {
+  .folio .skills-browser { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .folio .skill-categories { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+  .folio .skill-category { width: auto; padding: 8px 11px; border: 1px solid #e0e3d8; gap: 10px; font-size: 12px; }
+  .folio .skill-details { border-left: 0; border-top: 1px solid #e0e3d8; padding: 24px 0 0; }
+  .folio .skill-items { gap: 8px; }
+  .folio .skill-items li { font-size: 12px; padding: 7px 10px; }
+}
+@media(prefers-reduced-motion:reduce) { .folio .skill-items { animation: none; } }
+@media(max-width:800px) { .folio .contact-grid { gap: 32px; } }
+@media(max-width:600px) {
+  .folio .contact-grid { grid-template-columns: 1fr; gap: 34px; }
+  .folio .footer { padding-top: 32px; }
+  .folio .contact-intro>p { margin-bottom: 20px; }
+  .folio .contact-primary { margin-top: 16px; }
+}

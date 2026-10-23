@@ -9,8 +9,9 @@
     "build": "next build",
     "prebuild": "npm run check:skills",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint src scripts",
     "typecheck": "tsc --noEmit",
+    "test": "node --test scripts/github-calendar.test.mjs",
     "check:skills": "node scripts/check-skills-dedupe.mjs"
   },
   "dependencies": {

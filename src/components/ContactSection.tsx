@@ -1,122 +1,37 @@
-"use client";
-
-import { useState } from "react";
-import { Mail, Copy, Check, ArrowUpRight, FileText } from "lucide-react";
-import SectionHeading from "./SectionHeading";
-import { glassCardBase } from "../lib/classes";
-import { GithubIcon, LinkedinIcon, XIcon, LeetCodeIcon } from "./Icons";
+import { ArrowUp } from "lucide-react";
+import { portfolio } from "@/lib/portfolio";
+import LinkArrow from "./portfolio/LinkArrow";
 
 export default function ContactSection() {
-  const [copied, setCopied] = useState(false);
-  const email = "subhamoydatta703@gmail.com";
-
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(email);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // ignore
-    }
-  };
+  const profiles = [
+    { label: "LinkedIn", href: portfolio.linkedin },
+    { label: "GitHub", href: portfolio.github },
+    { label: "X", href: portfolio.x },
+    { label: "LeetCode", href: portfolio.leetcode },
+    { label: "DEV", href: portfolio.dev },
+  ];
 
   return (
-    <footer
-      id="contact"
-      className="py-16 sm:py-20"
-    >
-      <SectionHeading  title="Get In Touch" />
-
-      <div className={`p-8 sm:p-10 ${glassCardBase} hover:border-white/[0.2] space-y-8 shadow-xl shadow-black/40`}>
-        <p className="text-base text-zinc-300 max-w-2xl leading-relaxed">
-          Currently looking for a GenAI, agentic systems, or full-stack engineering internship to build on the work I've shipped so far. I'm always open to collaborating on agent, RAG, and full-stack systems — if you're building at a product company in the space, I'd love to talk.
-        </p>
-
-        <div className="flex flex-wrap items-center gap-4">
-          <a
-            href={`mailto:${email}`}
-            className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-[#18181b]/90 hover:bg-zinc-700 text-white text-sm font-mono transition-colors border border-white/[0.1] shadow-sm"
-          >
-            <Mail className="w-4 h-4 text-[#5B8DFF]" />
-            <span>{email}</span>
-            <ArrowUpRight className="w-4 h-4 text-zinc-400" />
-          </a>
-
-          <button
-            onClick={handleCopy}
-            className="inline-flex items-center gap-2 px-4 py-3 rounded-xl border border-white/[0.1] bg-white/[0.04] hover:bg-white/[0.08] text-zinc-300 hover:text-white text-sm font-mono transition-colors shadow-sm"
-            title="Copy email address"
-            aria-label="Copy email address"
-          >
-            {copied ? (
-              <>
-                <Check className="w-4 h-4 text-emerald-400" />
-                <span className="text-emerald-400 font-sans text-xs sm:text-sm font-medium">Copied!</span>
-              </>
-            ) : (
-              <>
-                <Copy className="w-4 h-4 text-zinc-400" />
-                <span className="font-sans text-xs sm:text-sm">Copy Email</span>
-              </>
-            )}
-          </button>
+    <footer id="contact" className="footer wrap" aria-labelledby="contact-heading" data-reveal>
+      <div className="contact-grid">
+        <div className="contact-intro">
+          <span className="eyebrow">CONTACT</span>
+          <h2 id="contact-heading">Let’s talk.</h2>
+          <p>Have an internship opportunity or a project in mind? I’d be glad to hear about it.</p>
+          <div className="contact-availability"><span aria-hidden="true" />Open to internships</div>
         </div>
-
-        <div className="pt-6 border-t border-white/[0.08] flex flex-wrap items-center gap-6 text-sm font-medium text-zinc-400">
-          <a
-            href="https://github.com/subhamoydatta703"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 hover:text-[#5B8DFF] transition-colors"
-          >
-            <GithubIcon className="w-4 h-4" />
-            <span>GitHub</span>
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/subhamoy-datta"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 hover:text-[#5B8DFF] transition-colors"
-          >
-            <LinkedinIcon className="w-4 h-4" />
-            <span>LinkedIn</span>
-          </a>
-
-          <a
-            href="https://x.com/codebysubhamoy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 hover:text-[#5B8DFF] transition-colors"
-          >
-            <XIcon className="w-4 h-4" />
-            <span>Twitter</span>
-          </a>
-
-          <a
-            href="https://leetcode.com/u/26W5VCTCTA"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 hover:text-[#5B8DFF] transition-colors"
-          >
-            <LeetCodeIcon className="w-4 h-4" />
-            <span>LeetCode</span>
-          </a>
-
-          <a
-            href="https://drive.google.com/file/d/19lfm2kUQvaWSybn_xV-_4e-STtAKrv3s/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 hover:text-[#5B8DFF] transition-colors"
-          >
-            <FileText className="w-4 h-4" />
-            <span>Resume</span>
-          </a>
+        <div className="contact-options">
+          <span className="eyebrow">GET IN TOUCH</span>
+          <div className="contact-primary"><a className="button" href={`mailto:${portfolio.email}`}>Email <LinkArrow /></a></div>
+          <div className="contact-elsewhere">
+            <span className="eyebrow">FIND ME ELSEWHERE</span>
+            <div>{profiles.map((profile) => <a key={profile.label} href={profile.href} target="_blank" rel="noreferrer">{profile.label} <LinkArrow /></a>)}</div>
+          </div>
         </div>
       </div>
-
-      <div className="pt-10 pb-20 text-center text-xs text-zinc-500 font-mono">
-        &copy; {new Date().getFullYear()} Subhamoy Datta · GenAI &amp; Agentic Systems Engineer
+      <div className="footer-bottom">
+        <span>{portfolio.name}</span>
+        <div><a href={portfolio.resume} target="_blank" rel="noreferrer">Resume <LinkArrow /></a><a href="#home">Back to top <ArrowUp className="link-arrow" aria-hidden="true" /></a></div>
       </div>
     </footer>
   );
