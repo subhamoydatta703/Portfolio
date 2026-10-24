@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ArrowLeft } from "lucide-react";
 import "./portrait-toggle.css";
 
 export default function PortraitToggle() {
@@ -39,10 +38,9 @@ export default function PortraitToggle() {
         />
       </button>
       <div className="portrait-note" id="portrait-hint" data-photo={showPhoto}>
-        <ArrowLeft className="portrait-note-arrow" aria-hidden="true" />
         <p className="portrait-instructions" aria-live="polite">
-          <span className="portrait-reveal-hint" aria-hidden={showPhoto}>Click to view<br />my photo</span>
-          <span className="portrait-return-hint" aria-hidden={!showPhoto}>Click to view<br />my avatar</span>
+          <span className="portrait-reveal-hint" aria-hidden={showPhoto}>Click to view my photo</span>
+          <span className="portrait-return-hint" aria-hidden={!showPhoto}>Click to view my avatar</span>
         </p>
       </div>
     </div>

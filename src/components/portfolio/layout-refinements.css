@@ -16,7 +16,8 @@
 .folio .expand-icon.is-open { transform: rotate(45deg); }
 .folio .projects-expansion { display: grid; grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows 440ms cubic-bezier(.22, 1, .36, 1), visibility 0s 440ms; }
 .folio .projects-expansion.is-open { grid-template-rows: 1fr; visibility: visible; transition: grid-template-rows 440ms cubic-bezier(.22, 1, .36, 1), visibility 0s; }
-.folio .expansion-clip { overflow: hidden; min-height: 0; }
+/* Leave room for the links' 6px outline offset and 2px focus ring. */
+.folio .expansion-clip { overflow: hidden; min-height: 0; margin-inline: -8px; padding-inline: 8px; }
 .folio .additional-grid { padding-top: 40px; padding-bottom: 8px; }
 .folio .extra-project { opacity: 0; transform: translateY(18px); transition: opacity 300ms ease, transform 360ms ease; }
 .folio .projects-expansion.is-open .extra-project { opacity: 1; transform: translateY(0); }
