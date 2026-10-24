@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Subhamoy Datta — Backend, GenAI & Agentic Systems",
+  title: "Subhamoy Datta - Backend, GenAI & Agentic Systems",
   description:
     "Subhamoy Datta builds and publishes agentic systems, develops RAG pipelines, and deploys LLM-powered backend systems. Explore projects, open-source contributions and technical skills.",
   openGraph: {
-    title: "Subhamoy Datta — Backend, GenAI & Agentic Systems",
+    title: "Subhamoy Datta - Backend, GenAI & Agentic Systems",
     description: "Agent harnesses, orchestration, RAG pipelines and LLM-powered backend systems.",
     type: "website",
   },

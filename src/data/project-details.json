@@ -103,7 +103,7 @@
     "subtitle": "AI Resume Analysis Platform",
     "badge": "Full-Stack AI Platform",
     "isFeatured": false,
-    "description": "Production-deployed AI resume analysis platform providing automated feedback and scoring via Gemini API. Built with an asynchronous Redis/BullMQ processing queue, PostgreSQL with Prisma ORM, AWS S3 asset storage, and Clerk authentication — serving as the architectural boilerplate origin for DocSense.",
+    "description": "Production-deployed AI resume analysis platform providing automated feedback and scoring via Gemini API. Built with an asynchronous Redis/BullMQ processing queue, PostgreSQL with Prisma ORM, AWS S3 asset storage, and Clerk authentication, serving as the architectural boilerplate origin for DocSense.",
     "tech": [
       "TypeScript",
       "Bun",

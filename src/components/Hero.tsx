@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { ArrowDownRight } from "lucide-react";
 import { portfolio } from "@/lib/portfolio";
 import LinkArrow from "./portfolio/LinkArrow";
+import PortraitToggle from "./portfolio/PortraitToggle";
 
 export default function Hero() {
   return (
@@ -10,8 +10,8 @@ export default function Hero() {
         <p className="availability"><span aria-hidden="true" />Open to internships</p>
         <h1 id="hero-heading">Backend Engineer.<br />GenAI &amp;<br />Agentic Systems.</h1>
         <p className="intro">
-          Building and publishing agentic systems—from agent harnesses to
-          orchestration—and developing and deploying RAG pipelines and
+          Building and publishing agentic systems, from agent harnesses to
+          orchestration, and developing and deploying RAG pipelines and
           LLM-powered backend systems.
         </p>
         <div className="actions">
@@ -20,9 +20,7 @@ export default function Hero() {
           <a className="textlink" href={portfolio.resume} target="_blank" rel="noreferrer">Resume <LinkArrow /></a>
         </div>
       </div>
-      <div className="hero-portrait">
-        <Image src="/profile.png" alt="Subhamoy Datta’s profile avatar" width={736} height={736} sizes="(max-width: 600px) 210px, 280px" priority />
-      </div>
+      <PortraitToggle />
     </section>
   );
 }

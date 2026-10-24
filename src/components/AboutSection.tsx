@@ -10,7 +10,7 @@ export default function AboutSection() {
         <div className="about-story">
           <p>My projects range from agent harnesses and orchestration to RAG pipelines and LLM-powered backend systems. I&apos;ve published REXA and somoy on npm, and built and deployed applications including DocSense and Resumark.</p>
           <p>I&apos;m looking for an internship where I can contribute to backend and AI systems, work with an engineering team, and deepen the experience I&apos;ve gained through these projects.</p>
-          <div className="recognition"><span className="eyebrow">RECOGNITION</span><h3>1st place — Frontend Odyssey</h3><p>IIT Patna · Hosted on Unstop</p></div>
+          <div className="recognition"><span className="eyebrow">RECOGNITION</span><h3>1st place - Frontend Odyssey</h3><p>IIT Patna · Hosted on Unstop</p></div>
         </div>
       </div>
     </section>

@@ -37,7 +37,7 @@ export default function Dock() {
 
     if (elements.length === 0) return;
 
-    // 40% of the viewport height — the visual reading line.
+    // 40% of the viewport height - the visual reading line.
     const readingLine = () => window.innerHeight * 0.4;
 
     let ticking = false;
@@ -119,7 +119,7 @@ export default function Dock() {
     const token = ++navigationToken.current;
     navigationLock.current = true;
 
-    // Release the lock only for the most recent navigation — a quick second
+    // Release the lock only for the most recent navigation - a quick second
     // click wins and keeps its own highlight.
     const release = () => {
       if (navigationToken.current === token) {

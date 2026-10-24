@@ -1,4 +1,4 @@
-# Subhamoy Datta — Portfolio
+# Subhamoy Datta - Portfolio
 
 Personal portfolio showcasing my work in backend engineering, GenAI and agentic systems: agent harnesses, orchestration, RAG pipelines and LLM-powered backend applications.
 
@@ -6,7 +6,7 @@ Personal portfolio showcasing my work in backend engineering, GenAI and agentic 
 
 ## Features
 
-- Three featured projects—REXA, DocSense and Marin—with an animated expansion for somoy, Resumark and ShelfLife.
+- Three featured projects (REXA, DocSense and Marin) with an animated expansion for somoy, Resumark and ShelfLife.
 - Original project screenshots and links to source code, npm packages and deployed applications.
 - GitHub contribution heatmap and aggregate open-source pull request statistics.
 - Eight skill categories covering 55 technical skills.
